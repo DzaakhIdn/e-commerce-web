@@ -12,7 +12,7 @@ class Card {
         const topOffsetCard = this.cardEL.getBoundingClientRect().top
         const progres = topOffsetCard / window.innerHeight
         const yPosition = progres * this.heightDiff
-        this.image_wrapper.style.transform = `translate(0, ${yPosition})`;
+        this.image_wrapper.style.transform = `translate(0, ${yPosition}px)`;
         console.log('update')
     }
 }
