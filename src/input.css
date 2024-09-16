@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .promo {
+    @apply bg-gray-300 w-full p-5 uppercase flex gap-2 text-slate-900 font-bold z-20 relative;
+  }
+
+  /* Navbar */
+  .hamburger div:first-child {
+    @apply rotate-45 translate-y-1.5;
+  }
+  .hamburger div:last-child {
+    @apply -rotate-45 -translate-y-1;
+  }
+  .search-cart {
+    @apply flex gap-3 lg:gap-6 lg:text-base;
+  }
+  .profile-mb {
+    @apply bg-gray-100 flex justify-between items-center px-[30px] py-[20px] mt-10 lg:hidden;
+  }
+
+  /* Header */
+  .header {
+    @apply flex flex-col justify-center items-center mt-10;
+  }
+  .text {
+    @apply w-2/3;
+  }
+  .card-container {
+    @apply grid gap-2 justify-center mt-5;
+  }
+  .card-container .cards {
+    @apply w-[350px] h-[100px] border border-slate-900 rounded-md overflow-hidden;
+  }
+  .card-container .cards-2 {
+    @apply w-[350px] h-48 border border-slate-900 rounded-md overflow-hidden;
+  }
+  .cards .card {
+    @apply w-full h-[200%];
+  }
+  .card .card_img {
+    @apply w-full h-full object-cover;
+  }
+
+}
