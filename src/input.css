@@ -23,25 +23,61 @@
 
   /* Header */
   .header {
-    @apply flex flex-col justify-center items-center mt-10;
+    @apply grid lg:grid-cols-2 justify-center lg:justify-between items-center mt-10 p-10;
   }
   .text {
-    @apply w-2/3;
+    @apply w-full;
   }
   .card-container {
-    @apply grid gap-2 justify-center mt-5;
+    @apply grid lg:grid-cols-3 lg:justify-between gap-2 justify-center mt-5;
   }
   .card-container .cards {
-    @apply w-[350px] h-[100px] border border-slate-900 rounded-md overflow-hidden;
+    @apply w-[350px] lg:w-[200px] lg:h-[150px] h-[100px] border border-slate-900 rounded-md overflow-hidden;
   }
   .card-container .cards-2 {
-    @apply w-[350px] h-48 border border-slate-900 rounded-md overflow-hidden;
+    @apply w-[350px] lg:w-auto lg:h-[305px] h-48 border border-slate-900 rounded-md overflow-hidden lg:col-span-2;
   }
   .cards .card {
     @apply w-full h-[200%];
   }
-  .card .card_img {
+  .card_img {
     @apply w-full h-full object-cover;
   }
 
+  /* About */
+  .about {
+    @apply flex flex-col gap-5 justify-center items-center;
+  }
+  .title {
+    @apply bg-white border-4 border-black py-3 px-4;
+  }
+
+  /* Product */
+  .product {
+    @apply mt-2 p-10;
+  }
+  .product_type {
+    @apply grid justify-center items-center grid-cols-2 md:grid-cols-4 gap-2;
+  }
+  .product_item {
+    @apply bg-black border-2 border-black text-white hover:bg-white hover:text-black hover:cursor-pointer transition-all duration-300 py-3 px-4 text-center;
+  }
+  .product-card {
+    @apply grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 mt-5;
+  }
+  .card_item {
+    @apply w-auto h-[250px] p-3 shadow-md border-gray-100 border;
+  }
+  .card_item .desc {
+    @apply text-sm line-clamp-3 text-slate-300 space-x-1;
+  }
+  .card_item .button {
+    @apply flex justify-between gap-2 items-center mt-3;
+  }
+  .button .buy_icon {
+    @apply bg-black text-white rounded-sm py-[2px] px-[2px];
+  }
+  .button .buy_btn {
+    @apply bg-black text-white rounded-sm py-[9px] px-[3px] w-full h-auto text-xs indent-2;
+  }
 }

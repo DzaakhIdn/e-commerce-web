@@ -38,7 +38,7 @@
     </div>
 
     <!-- Navbar -->
-    <nav class="navbar border flex justify-between">
+    <nav class="navbar border flex justify-between sticky">
       <div class="bungkus flex-row lg:flex-row-reverse justify-between">
         <div class="flex items-center justify-start border-l lg:border-l-0">
           <input
@@ -49,7 +49,7 @@
           />
           <label
             for="hamburger"
-            class="peer-checked:hamburger block relative z-20 p-6 -mr-6 cursor-pointer lg:hidden"
+            class="peer-checked:hamburger block relative z-50 p-6 -mr-6 cursor-pointer lg:hidden"
           >
             <div
               aria-hidden="true"
@@ -62,7 +62,7 @@
           </label>
 
           <div
-            class="peer-checked:translate-x-0 fixed inset-0 w-[calc(100%-10rem)] translate-x-[-100%] bg-white/20 ring-black/5 backdrop-blur-md border-r shadow-xl transition duration-300 lg:border-r-0 lg:w-auto lg:static lg:shadow-none lg:translate-x-0 lg:bg-white lg:backdrop-blur-none z-10"
+            class="peer-checked:translate-x-0 fixed inset-0 w-[calc(100%-10rem)] translate-x-[-100%] bg-white/20 ring-black/5 backdrop-blur-md border-r shadow-xl transition duration-300 lg:border-r-0 lg:w-auto lg:static lg:shadow-none lg:translate-x-0 lg:bg-white lg:backdrop-blur-none z-40"
           >
             <div class="flex flex-col h-full lg:items-center lg:flex-row">
               <ul
@@ -88,8 +88,6 @@
                         d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"
                       />
                     </svg>
-
-                    <!-- moon icon -->
                     <svg
                       class="swap-on h-9 w-9 fill-current"
                       xmlns="http://www.w3.org/2000/svg"
@@ -154,7 +152,7 @@
 
       <div class="search-cart">
         <i class="ph ph-magnifying-glass"></i>
-        <i class="ph ph-shopping-cart"></i>
+        <i class="ph ph-shopping-bag-open"></i>
         <i class="ph ph-user hidden lg:inline"></i>
         <label class="swap swap-rotate hidden lg:inline-grid">
           <!-- this hidden checkbox controls the state -->
@@ -195,12 +193,12 @@
       <div class="text">
         <h1
           style="font-family: 'Raleway'"
-          class="font-extrabold italic text-slate-900 text-2xl text-center"
+          class="font-extrabold italic w-full text-slate-900 text-2xl lg:text-4xl text-center lg:text-left"
         >
           Designed for Life, Made for You,
           <span
             style="font-family: 'Cormorant'"
-            class="font-bold text-slate-800 text-xl text-center"
+            class="font-bold text-slate-800 text-xl lg:text-4xl text-center lg:text-left"
             >Crafted with care, tailored for your every moment.</span
           >
         </h1>
@@ -216,43 +214,330 @@
             />
           </div>
         </div>
-        <div class="cards">
-          <div class="card">
-            <img
-              src="./assets/img/carrousel/img-1.jpg"
-              alt=""
-              class="card_img"
-            />
+        <div class="bungkus space-y-1">
+          <div class="cards">
+            <div class="card">
+              <img
+                src="./assets/img/carrousel/img-1.jpeg"
+                alt=""
+                class="card_img"
+              />
+            </div>
           </div>
-        </div>
-        <div class="cards">
-          <div class="card">
-            <img
-              src="./assets/img/carrousel/img-2.jpg"
-              alt=""
-              class="card_img"
-            />
+          <div class="cards">
+            <div class="card">
+              <img
+                src="./assets/img/carrousel/img-2.jpg"
+                alt=""
+                class="card_img"
+              />
+            </div>
           </div>
         </div>
       </div>
     </header>
 
-    <section class="about">
-      <h1>lorem</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum dolore
-        minus perspiciatis saepe. Laudantium atque ipsa, quae tempore doloremque
-        nihil saepe harum iste. Quos fugiat amet vero, aperiam voluptates
-        consectetur autem accusantium voluptate facilis nihil tempora, accusamus
-        rem eligendi quam iste sed numquam a unde minima necessitatibus. Veniam
-        quam possimus fugiat consectetur, odit provident vel rem quo quis magnam
-        tenetur. Velit nulla nostrum nihil libero id quis sunt inventore vel
-        nisi quaerat odio totam eveniet iure neque cupiditate error ipsa
-        voluptate accusamus sint, laudantium placeat. Commodi, explicabo optio.
-        Sint perferendis natus dolorum modi debitis eius expedita illo laborum
-        dolorem dicta.
+    <section class="about p-10 mt-5">
+      <p class="title">DISCOVER ALL</p>
+      <p class="text-center">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis
+        dignissimos perferendis totam sunt amet magni veniam labore fuga, non
+        dolores eaque quas id soluta ipsa consectetur, voluptatibus aliquid.
+        Facere, deserunt?
       </p>
+      <div id="default-carousel" class="relative w-full" data-carousel="slide">
+        <!-- Carousel wrapper -->
+        <div
+          class="relative h-56 border border-slate-900 overflow-hidden rounded-lg md:h-96"
+        >
+          <!-- Item 1 -->
+          <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img
+              src="./assets/img/carrousel/imgcar-1.jpg"
+              class="card_img absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+              alt="..."
+            />
+          </div>
+          <!-- Item 2 -->
+          <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img
+              src="./assets/img/carrousel/imgcar-2.jpg"
+              class="card_img absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+              alt="..."
+            />
+          </div>
+          <!-- Item 3 -->
+          <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img
+              src="./assets/img/carrousel/imgcar-3.jpg"
+              class="card_img absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+              alt="..."
+            />
+          </div>
+        </div>
+        <!-- Slider indicators -->
+        <div
+          class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse"
+        >
+          <button
+            type="button"
+            class="w-3 h-3 rounded-full"
+            aria-current="true"
+            aria-label="Slide 1"
+            data-carousel-slide-to="0"
+          ></button>
+          <button
+            type="button"
+            class="w-3 h-3 rounded-full"
+            aria-current="false"
+            aria-label="Slide 2"
+            data-carousel-slide-to="1"
+          ></button>
+          <button
+            type="button"
+            class="w-3 h-3 rounded-full"
+            aria-current="false"
+            aria-label="Slide 3"
+            data-carousel-slide-to="2"
+          ></button>
+          <!-- <button
+            type="button"
+            class="w-3 h-3 rounded-full"
+            aria-current="false"
+            aria-label="Slide 4"
+            data-carousel-slide-to="3"
+          ></button>
+          <button
+            type="button"
+            class="w-3 h-3 rounded-full"
+            aria-current="false"
+            aria-label="Slide 5"
+            data-carousel-slide-to="4"
+          ></button> -->
+        </div>
+        <!-- Slider controls -->
+        <!-- <button
+          type="button"
+          class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+          data-carousel-prev
+        >
+          <span
+            class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+          >
+            <svg
+              class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 6 10"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 1 1 5l4 4"
+              />
+            </svg>
+            <span class="sr-only">Previous</span>
+          </span>
+        </button>
+        <button
+          type="button"
+          class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+          data-carousel-next
+        >
+          <span
+            class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+          >
+            <svg
+              class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 6 10"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m1 9 4-4-4-4"
+              />
+            </svg>
+            <span class="sr-only">Next</span>
+          </span>
+        </button> -->
+      </div>
     </section>
+
+    <section class="product">
+      <ul class="product_type">
+        <li data-item="pria" class="product_item">PRIA</li>
+        <li data-item="wanita" class="product_item">WANITA</li>
+        <li data-item="anak" class="product_item">ANAK</li>
+        <li data-item="nenek" class="product_item">NENEK</li>
+      </ul>
+      <div class="product-card">
+        <div class="card_item" data-item="pria">
+          <img src="./assets/img/products card/male-1.jpg" alt="" />
+          <p class="desc">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+            consequatur asperiores alias blanditiis nobis quam iste possimus,
+            deserunt doloremque necessitatibus rerum doloribus totam quo
+            accusamus dolorem nostrum culpa, itaque repellendus!
+          </p>
+          <div class="button">
+            <i class="ph-thin ph-shopping-bag buy_icon"></i>
+            <a href="#" class="buy_btn">$150</a>
+          </div>
+        </div>
+        <div class="card_item" data-item="pria">
+          <img src="./assets/img/products card/male-2.jpg" alt="" />
+          <p class="desc">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+            consequatur asperiores alias blanditiis nobis quam iste possimus,
+            deserunt doloremque necessitatibus rerum doloribus totam quo
+            accusamus dolorem nostrum culpa, itaque repellendus!
+          </p>
+          <div class="button">
+            <i class="ph-thin ph-shopping-bag buy_icon"></i>
+            <a href="#" class="buy_btn">$150</a>
+          </div>
+        </div>
+        <div class="card_item" data-item="pria">
+          <img src="./assets/img/products card/male-3.jpg" alt="" />
+          <p class="desc">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+            consequatur asperiores alias blanditiis nobis quam iste possimus,
+            deserunt doloremque necessitatibus rerum doloribus totam quo
+            accusamus dolorem nostrum culpa, itaque repellendus!
+          </p>
+          <div class="button">
+            <i class="ph-thin ph-shopping-bag buy_icon"></i>
+            <a href="#" class="buy_btn">$150</a>
+          </div>
+        </div>
+        <div class="card_item" data-item="wanita">
+          <img src="./assets/img/products card/female-1.jpg" alt="" />
+          <p class="desc">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+            consequatur asperiores alias blanditiis nobis quam iste possimus,
+            deserunt doloremque necessitatibus rerum doloribus totam quo
+            accusamus dolorem nostrum culpa, itaque repellendus!
+          </p>
+          <div class="button">
+            <i class="ph-thin ph-shopping-bag buy_icon"></i>
+            <a href="#" class="buy_btn">$150</a>
+          </div>
+        </div>
+        <div class="card_item" data-item="wanita">
+          <img src="./assets/img/products card/female-2.jpg" alt="" />
+          <p class="desc">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+            consequatur asperiores alias blanditiis nobis quam iste possimus,
+            deserunt doloremque necessitatibus rerum doloribus totam quo
+            accusamus dolorem nostrum culpa, itaque repellendus!
+          </p>
+          <div class="button">
+            <i class="ph-thin ph-shopping-bag buy_icon"></i>
+            <a href="#" class="buy_btn">$150</a>
+          </div>
+        </div>
+        <div class="card_item" data-item="wanita">
+          <img src="./assets/img/products card/female-3.jpg" alt="" />
+          <p class="desc">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+            consequatur asperiores alias blanditiis nobis quam iste possimus,
+            deserunt doloremque necessitatibus rerum doloribus totam quo
+            accusamus dolorem nostrum culpa, itaque repellendus!
+          </p>
+          <div class="button">
+            <i class="ph-thin ph-shopping-bag buy_icon"></i>
+            <a href="#" class="buy_btn">$150</a>
+          </div>
+        </div>
+        <div class="card_item" data-item="anak">
+          <img src="./assets/img/products card/child-1.jpg" alt="" />
+          <p class="desc">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+            consequatur asperiores alias blanditiis nobis quam iste possimus,
+            deserunt doloremque necessitatibus rerum doloribus totam quo
+            accusamus dolorem nostrum culpa, itaque repellendus!
+          </p>
+          <div class="button">
+            <i class="ph-thin ph-shopping-bag buy_icon"></i>
+            <a href="#" class="buy_btn">$150</a>
+          </div>
+        </div>
+        <div class="card_item" data-item="anak">
+          <img src="./assets/img/products card/child-2.jpg" alt="" />
+          <p class="desc">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+            consequatur asperiores alias blanditiis nobis quam iste possimus,
+            deserunt doloremque necessitatibus rerum doloribus totam quo
+            accusamus dolorem nostrum culpa, itaque repellendus!
+          </p>
+          <div class="button">
+            <i class="ph-thin ph-shopping-bag buy_icon"></i>
+            <a href="#" class="buy_btn">$150</a>
+          </div>
+        </div>
+        <div class="card_item" data-item="anak">
+          <img src="./assets/img/products card/child-3.jpg" alt="" />
+          <p class="desc">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+            consequatur asperiores alias blanditiis nobis quam iste possimus,
+            deserunt doloremque necessitatibus rerum doloribus totam quo
+            accusamus dolorem nostrum culpa, itaque repellendus!
+          </p>
+          <div class="button">
+            <i class="ph-thin ph-shopping-bag buy_icon"></i>
+            <a href="#" class="buy_btn">$150</a>
+          </div>
+        </div>
+        <div class="card_item" data-item="nenek">
+          <img src="./assets/img/products card/gradma-1.jpg" alt="" />
+          <p class="desc">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+            consequatur asperiores alias blanditiis nobis quam iste possimus,
+            deserunt doloremque necessitatibus rerum doloribus totam quo
+            accusamus dolorem nostrum culpa, itaque repellendus!
+          </p>
+          <div class="button">
+            <i class="ph-thin ph-shopping-bag buy_icon"></i>
+            <a href="#" class="buy_btn">$150</a>
+          </div>
+        </div>
+        <div class="card_item" data-item="nenek">
+          <img src="./assets/img/products card/grandma-3.jpg" alt="" />
+          <p class="desc">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+            consequatur asperiores alias blanditiis nobis quam iste possimus,
+            deserunt doloremque necessitatibus rerum doloribus totam quo
+            accusamus dolorem nostrum culpa, itaque repellendus!
+          </p>
+          <div class="button">
+            <i class="ph-thin ph-shopping-bag buy_icon"></i>
+            <a href="#" class="buy_btn">$150</a>
+          </div>
+        </div>
+        <div class="card_item" data-item="nenek">
+          <img src="./assets/img/products card/grandma-2.jpg" alt="" />
+          <p class="desc">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+            consequatur asperiores alias blanditiis nobis quam iste possimus,
+            deserunt doloremque necessitatibus rerum doloribus totam quo
+            accusamus dolorem nostrum culpa, itaque repellendus!
+          </p>
+          <div class="button">
+            <i class="ph-thin ph-shopping-bag buy_icon"></i>
+            <a href="#" class="buy_btn">$150</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <script src="main.js"></script>
     <script src="./node_modules/flowbite/dist/flowbite.min.js"></script>
   </body>
