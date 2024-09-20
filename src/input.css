@@ -57,7 +57,7 @@
     @apply mt-2 p-10;
   }
   .product_type {
-    @apply grid justify-center items-center grid-cols-2 md:grid-cols-4 gap-2;
+    @apply grid justify-center items-center grid-cols-2 md:grid-cols-5 gap-2;
   }
   .product_item {
     @apply bg-black border-2 border-black text-white hover:bg-white hover:text-black hover:cursor-pointer transition-all duration-300 py-3 px-4 text-center;
@@ -66,18 +66,21 @@
     @apply grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 mt-5;
   }
   .card_item {
-    @apply w-auto h-[250px] p-3 shadow-md border-gray-100 border;
+    @apply bg-white border border-gray-200 rounded-xl shadow-lg p-6 max-w-xs mx-auto transition-transform hover:transform hover:scale-105;
+  }
+  .card_item img {
+    @apply w-full h-auto rounded-lg mb-4;
   }
   .card_item .desc {
-    @apply text-sm line-clamp-3 text-slate-300 space-x-1;
+    @apply text-gray-600 text-sm text-center mb-6 line-clamp-3;
   }
   .card_item .button {
-    @apply flex justify-between gap-2 items-center mt-3;
+    @apply flex justify-between items-center gap-4 w-full;
   }
   .button .buy_icon {
-    @apply bg-black text-white rounded-sm py-[2px] px-[2px];
+    @apply flex items-center justify-center bg-gray-800 text-white py-2 px-4 rounded-lg transition-colors hover:bg-gray-600 flex-shrink-0 w-1/3;
   }
   .button .buy_btn {
-    @apply bg-black text-white rounded-sm py-[9px] px-[3px] w-full h-auto text-xs indent-2;
+    @apply bg-gray-800 text-white py-2 px-4 rounded-lg transition-colors hover:bg-gray-600 w-full text-center;
   }
 }

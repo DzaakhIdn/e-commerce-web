@@ -27,3 +27,16 @@ function initCards(){
 }
 
 initCards()
+
+// Card
+
+let filterBtn = document.querySelectorAll(".product_type .product_item");
+let filterableCards = document.querySelectorAll(".product-card .card_item");
+
+const filterCards = e => {
+    document.querySelector(".active").classList.remove("active");
+    e.target.classList.add(".e.target")
+    console.log(e.target)
+}
+
+filterBtn.forEach(button => button.addEventListener("click", filterCards))
