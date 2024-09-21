@@ -187,56 +187,91 @@
       </div>
     </nav>
 
-    <!-- HEADER -->
-    <header class="header w-full h-auto">
-      <!-- Judul -->
-      <div class="text">
-        <h1
-          style="font-family: 'Raleway'"
-          class="font-extrabold italic w-full text-slate-900 text-2xl lg:text-4xl text-center lg:text-left"
-        >
-          Designed for Life, Made for You,
-          <span
-            style="font-family: 'Cormorant'"
-            class="font-bold text-slate-800 text-xl lg:text-4xl text-center lg:text-left"
-            >Crafted with care, tailored for your every moment.</span
-          >
-        </h1>
-      </div>
-      <!-- Kartu -->
-      <div class="card-container">
-        <div class="cards-2">
-          <div class="card">
-            <img
-              src="./assets/img/carrousel/img-3.jpeg"
-              alt=""
-              class="card_img"
-            />
-          </div>
+    <!-- Header -->
+    <header class="header">
+      <div class="image_1 bg-[url('./../assets/img/header/summer-img.jpg')]">
+        <div class="text_header">
+          <p class="title_header">
+            Color of <br />
+            Summer <br />
+            Outfit
+          </p>
+          <p class="desc_header">
+            100+ Collections for your outfit <br />
+            inspirations in this summer
+          </p>
+          <a href="#" class="btn_header">view collections</a>
         </div>
-        <div class="bungkus space-y-1">
-          <div class="cards">
-            <div class="card">
-              <img
-                src="./assets/img/carrousel/img-1.jpeg"
-                alt=""
-                class="card_img"
-              />
-            </div>
-          </div>
-          <div class="cards">
-            <div class="card">
-              <img
-                src="./assets/img/carrousel/img-2.jpg"
-                alt=""
-                class="card_img"
-              />
-            </div>
-          </div>
+      </div>
+
+      <div class="image_container">
+        <div
+          class="image_2 bg-[url('./../assets/img/header/image-outdoor.png')]"
+        >
+          <p class="title_bg">
+            Outdoor <br />
+            Active
+          </p>
+        </div>
+        <div class="image_2 bg-[url('./../assets/img/header/image-sepatu.png')]">
+          <p class="title_bg">
+            Casual <br />
+            Comfort
+          </p>
         </div>
       </div>
     </header>
 
+    <!-- Value -->
+    <section class="value">
+      <p class="why" style="font-family: 'Raleway'">
+        Why you’ll love to <br />
+        shop on our website
+      </p>
+      <div class="card_value_container">
+        <div class="card_value">
+          <div class="icon_value">
+            <i class="ph ph-heart"></i>
+          </div>
+          <div class="text_header">
+            <p class="title_value">Take care with love</p>
+            <p class="desc text-center">
+              We take care your package with full of attention and of course
+              full of love. We want to make sure you’ll receive your package
+              like you receive your birthday gift.
+            </p>
+          </div>
+        </div>
+        <div class="card_value">
+          <div class="icon_value">
+            <i class="ph ph-phone"></i>
+          </div>
+          <div class="text_header">
+            <p class="title_value">Take care with love</p>
+            <p class="desc text-center">
+              You do not need to worry when you want to check your package. We
+              will always answer whatever your questions. Just click on the chat
+              icon and we will talk.
+            </p>
+          </div>
+        </div>
+        <div class="card_value">
+          <div class="icon_value">
+            <i class="ph ph-arrows-clockwise"></i>
+          </div>
+          <div class="text_header">
+            <p class="title_value">Refund Process</p>
+            <p class="desc text-center">
+              Refund is a such bad experience and we don’t want that thing
+              happen to you. But when it’s happen we will make sure you will
+              through smooth and friendly process.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Aboutr -->
     <section class="about p-10 mt-5">
       <p class="title">DISCOVER ALL</p>
       <p class="text-center">
@@ -371,174 +406,505 @@
       </div>
     </section>
 
+    <!-- Product -->
     <section class="product">
       <ul class="product_type">
-        <li data-item="all" class="active product_item">SEMUA</li>
+        <li data-item="all" class="aktive product_item">SEMUA</li>
         <li data-item="pria" class="product_item">PRIA</li>
         <li data-item="wanita" class="product_item">WANITA</li>
         <li data-item="anak" class="product_item">ANAK</li>
         <li data-item="nenek" class="product_item">NENEK</li>
       </ul>
       <div class="product-card">
-        <div class="card_item" data-item="pria">
-          <img src="./assets/img/products card/male-1.jpg" alt="" />
-          <p class="desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-            consequatur asperiores alias blanditiis nobis quam iste possimus,
-            deserunt doloremque necessitatibus rerum doloribus totam quo
-            accusamus dolorem nostrum culpa, itaque repellendus!
-          </p>
-          <div class="button">
-            <i class="ph-thin ph-shopping-bag buy_icon"></i>
-            <a href="#" class="buy_btn">$150</a>
+        <div class="card_container" data-item="pria" data-aos="zoom-in">
+          <!-- Image with hover effect -->
+          <div class="overflow-hidden">
+            <img
+              src="assets/img/products card/male-1.jpg"
+              alt="Product Image"
+              class="card_img"
+            />
+          </div>
+
+          <!-- Card Content -->
+          <div class="p-4">
+            <div class="flex justify-between items-start">
+              <!-- Product Info -->
+              <div>
+                <h2 class="card_name">Product Name</h2>
+                <div class="flex items-center mt-1">
+                  <span class="text-gray-900 text-xl font-bold">99.00</span>
+                  <span class="text-gray-500 line-through ml-2">149.00</span>
+                </div>
+              </div>
+              <!-- Favorite Icon -->
+              <button class="text-gray-400 hover:text-red-500">
+                <i class="ph ph-heart"></i>
+              </button>
+            </div>
+
+            <!-- Button -->
+            <button class="card_btn">BELI</button>
           </div>
         </div>
-        <div class="card_item" data-item="pria">
-          <img src="./assets/img/products card/male-2.jpg" alt="" />
-          <p class="desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-            consequatur asperiores alias blanditiis nobis quam iste possimus,
-            deserunt doloremque necessitatibus rerum doloribus totam quo
-            accusamus dolorem nostrum culpa, itaque repellendus!
-          </p>
-          <div class="button">
-            <i class="ph-thin ph-shopping-bag buy_icon"></i>
-            <a href="#" class="buy_btn">$150</a>
+        <div class="card_container" data-item="pria" data-aos="zoom-in">
+          <!-- Image with hover effect -->
+          <div class="overflow-hidden">
+            <img
+              src="assets/img/products card/male-2.jpg"
+              alt="Product Image"
+              class="card_img"
+            />
+          </div>
+
+          <!-- Card Content -->
+          <div class="p-4">
+            <div class="flex justify-between items-start">
+              <!-- Product Info -->
+              <div>
+                <h2 class="card_name">Product Name</h2>
+                <div class="flex items-center mt-1">
+                  <span class="text-gray-900 text-xl font-bold">99.00</span>
+                  <span class="text-gray-500 line-through ml-2">149.00</span>
+                </div>
+              </div>
+              <!-- Favorite Icon -->
+              <button class="text-gray-400 hover:text-red-500">
+                <i class="ph ph-heart"></i>
+              </button>
+            </div>
+
+            <!-- Button -->
+            <button class="card_btn">BELI</button>
           </div>
         </div>
-        <div class="card_item" data-item="pria">
-          <img src="./assets/img/products card/male-3.jpg" alt="" />
-          <p class="desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-            consequatur asperiores alias blanditiis nobis quam iste possimus,
-            deserunt doloremque necessitatibus rerum doloribus totam quo
-            accusamus dolorem nostrum culpa, itaque repellendus!
-          </p>
-          <div class="button">
-            <i class="ph-thin ph-shopping-bag buy_icon"></i>
-            <a href="#" class="buy_btn">$150</a>
+        <div class="card_container" data-item="pria" data-aos="zoom-in">
+          <!-- Image with hover effect -->
+          <div class="overflow-hidden">
+            <img
+              src="assets/img/products card/male-3.jpg"
+              alt="Product Image"
+              class="card_img"
+            />
+          </div>
+
+          <!-- Card Content -->
+          <div class="p-4">
+            <div class="flex justify-between items-start">
+              <!-- Product Info -->
+              <div>
+                <h2 class="card_name">Product Name</h2>
+                <div class="flex items-center mt-1">
+                  <span class="text-gray-900 text-xl font-bold">99.00</span>
+                  <span class="text-gray-500 line-through ml-2">149.00</span>
+                </div>
+              </div>
+              <!-- Favorite Icon -->
+              <button class="text-gray-400 hover:text-red-500">
+                <i class="ph ph-heart"></i>
+              </button>
+            </div>
+
+            <!-- Button -->
+            <button class="card_btn">BELI</button>
           </div>
         </div>
-        <div class="card_item" data-item="wanita">
-          <img src="./assets/img/products card/female-1.jpg" alt="" />
-          <p class="desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-            consequatur asperiores alias blanditiis nobis quam iste possimus,
-            deserunt doloremque necessitatibus rerum doloribus totam quo
-            accusamus dolorem nostrum culpa, itaque repellendus!
-          </p>
-          <div class="button">
-            <i class="ph-thin ph-shopping-bag buy_icon"></i>
-            <a href="#" class="buy_btn">$150</a>
+        <div class="card_container" data-item="wanita" data-aos="zoom-in">
+          <!-- Image with hover effect -->
+          <div class="overflow-hidden">
+            <img
+              src="assets/img/products card/female-1.jpg"
+              alt="Product Image"
+              class="card_img"
+            />
+          </div>
+
+          <!-- Card Content -->
+          <div class="p-4">
+            <div class="flex justify-between items-start">
+              <!-- Product Info -->
+              <div>
+                <h2 class="card_name">Product Name</h2>
+                <div class="flex items-center mt-1">
+                  <span class="text-gray-900 text-xl font-bold">99.00</span>
+                  <span class="text-gray-500 line-through ml-2">149.00</span>
+                </div>
+              </div>
+              <!-- Favorite Icon -->
+              <button class="text-gray-400 hover:text-red-500">
+                <i class="ph ph-heart"></i>
+              </button>
+            </div>
+
+            <!-- Button -->
+            <button class="card_btn">BELI</button>
           </div>
         </div>
-        <div class="card_item" data-item="wanita">
-          <img src="./assets/img/products card/female-2.jpg" alt="" />
-          <p class="desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-            consequatur asperiores alias blanditiis nobis quam iste possimus,
-            deserunt doloremque necessitatibus rerum doloribus totam quo
-            accusamus dolorem nostrum culpa, itaque repellendus!
-          </p>
-          <div class="button">
-            <i class="ph-thin ph-shopping-bag buy_icon"></i>
-            <a href="#" class="buy_btn">$150</a>
+        <div class="card_container" data-item="wanita" data-aos="zoom-in">
+          <!-- Image with hover effect -->
+          <div class="overflow-hidden">
+            <img
+              src="assets/img/products card/female-2.jpg"
+              alt="Product Image"
+              class="card_img"
+            />
+          </div>
+
+          <!-- Card Content -->
+          <div class="p-4">
+            <div class="flex justify-between items-start">
+              <!-- Product Info -->
+              <div>
+                <h2 class="card_name">Product Name</h2>
+                <div class="flex items-center mt-1">
+                  <span class="text-gray-900 text-xl font-bold">99.00</span>
+                  <span class="text-gray-500 line-through ml-2">149.00</span>
+                </div>
+              </div>
+              <!-- Favorite Icon -->
+              <button class="text-gray-400 hover:text-red-500">
+                <i class="ph ph-heart"></i>
+              </button>
+            </div>
+
+            <!-- Button -->
+            <button class="card_btn">BELI</button>
           </div>
         </div>
-        <div class="card_item" data-item="wanita">
-          <img src="./assets/img/products card/female-3.jpg" alt="" />
-          <p class="desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-            consequatur asperiores alias blanditiis nobis quam iste possimus,
-            deserunt doloremque necessitatibus rerum doloribus totam quo
-            accusamus dolorem nostrum culpa, itaque repellendus!
-          </p>
-          <div class="button">
-            <i class="ph-thin ph-shopping-bag buy_icon"></i>
-            <a href="#" class="buy_btn">$150</a>
+        <div class="card_container" data-item="wanita" data-aos="zoom-in">
+          <!-- Image with hover effect -->
+          <div class="overflow-hidden">
+            <img
+              src="assets/img/products card/female-3.jpg"
+              alt="Product Image"
+              class="card_img"
+            />
+          </div>
+
+          <!-- Card Content -->
+          <div class="p-4">
+            <div class="flex justify-between items-start">
+              <!-- Product Info -->
+              <div>
+                <h2 class="card_name">Product Name</h2>
+                <div class="flex items-center mt-1">
+                  <span class="text-gray-900 text-xl font-bold">99.00</span>
+                  <span class="text-gray-500 line-through ml-2">149.00</span>
+                </div>
+              </div>
+              <!-- Favorite Icon -->
+              <button class="text-gray-400 hover:text-red-500">
+                <i class="ph ph-heart"></i>
+              </button>
+            </div>
+
+            <!-- Button -->
+            <button class="card_btn">BELI</button>
           </div>
         </div>
-        <div class="card_item" data-item="anak">
-          <img src="./assets/img/products card/child-1.jpg" alt="" />
-          <p class="desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-            consequatur asperiores alias blanditiis nobis quam iste possimus,
-            deserunt doloremque necessitatibus rerum doloribus totam quo
-            accusamus dolorem nostrum culpa, itaque repellendus!
-          </p>
-          <div class="button">
-            <i class="ph-thin ph-shopping-bag buy_icon"></i>
-            <a href="#" class="buy_btn">$150</a>
+        <div class="card_container" data-item="anak" data-aos="zoom-in">
+          <!-- Image with hover effect -->
+          <div class="overflow-hidden">
+            <img
+              src="assets/img/products card/child-1.jpg"
+              alt="Product Image"
+              class="card_img"
+            />
+          </div>
+
+          <!-- Card Content -->
+          <div class="p-4">
+            <div class="flex justify-between items-start">
+              <!-- Product Info -->
+              <div>
+                <h2 class="card_name">Product Name</h2>
+                <div class="flex items-center mt-1">
+                  <span class="text-gray-900 text-xl font-bold">99.00</span>
+                  <span class="text-gray-500 line-through ml-2">149.00</span>
+                </div>
+              </div>
+              <!-- Favorite Icon -->
+              <button class="text-gray-400 hover:text-red-500">
+                <i class="ph ph-heart"></i>
+              </button>
+            </div>
+
+            <!-- Button -->
+            <button class="card_btn">BELI</button>
           </div>
         </div>
-        <div class="card_item" data-item="anak">
-          <img src="./assets/img/products card/child-2.jpg" alt="" />
-          <p class="desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-            consequatur asperiores alias blanditiis nobis quam iste possimus,
-            deserunt doloremque necessitatibus rerum doloribus totam quo
-            accusamus dolorem nostrum culpa, itaque repellendus!
-          </p>
-          <div class="button">
-            <i class="ph-thin ph-shopping-bag buy_icon"></i>
-            <a href="#" class="buy_btn">$150</a>
+        <div class="card_container" data-item="anak" data-aos="zoom-in">
+          <!-- Image with hover effect -->
+          <div class="overflow-hidden">
+            <img
+              src="assets/img/products card/child-2.jpg"
+              alt="Product Image"
+              class="card_img"
+            />
+          </div>
+
+          <!-- Card Content -->
+          <div class="p-4">
+            <div class="flex justify-between items-start">
+              <!-- Product Info -->
+              <div>
+                <h2 class="card_name">Product Name</h2>
+                <div class="flex items-center mt-1">
+                  <span class="text-gray-900 text-xl font-bold">99.00</span>
+                  <span class="text-gray-500 line-through ml-2">149.00</span>
+                </div>
+              </div>
+              <!-- Favorite Icon -->
+              <button class="text-gray-400 hover:text-red-500">
+                <i class="ph ph-heart"></i>
+              </button>
+            </div>
+
+            <!-- Button -->
+            <button class="card_btn">BELI</button>
           </div>
         </div>
-        <div class="card_item" data-item="anak">
-          <img src="./assets/img/products card/child-3.jpg" alt="" />
-          <p class="desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-            consequatur asperiores alias blanditiis nobis quam iste possimus,
-            deserunt doloremque necessitatibus rerum doloribus totam quo
-            accusamus dolorem nostrum culpa, itaque repellendus!
-          </p>
-          <div class="button">
-            <i class="ph-thin ph-shopping-bag buy_icon"></i>
-            <a href="#" class="buy_btn">$150</a>
+        <div class="card_container" data-item="anak" data-aos="zoom-in">
+          <!-- Image with hover effect -->
+          <div class="overflow-hidden">
+            <img
+              src="assets/img/products card/child-3.jpg"
+              alt="Product Image"
+              class="card_img"
+            />
+          </div>
+
+          <!-- Card Content -->
+          <div class="p-4">
+            <div class="flex justify-between items-start">
+              <!-- Product Info -->
+              <div>
+                <h2 class="card_name">Product Name</h2>
+                <div class="flex items-center mt-1">
+                  <span class="text-gray-900 text-xl font-bold">99.00</span>
+                  <span class="text-gray-500 line-through ml-2">149.00</span>
+                </div>
+              </div>
+              <!-- Favorite Icon -->
+              <button class="text-gray-400 hover:text-red-500">
+                <i class="ph ph-heart"></i>
+              </button>
+            </div>
+
+            <!-- Button -->
+            <button class="card_btn">BELI</button>
           </div>
         </div>
-        <div class="card_item" data-item="nenek">
-          <img src="./assets/img/products card/gradma-1.jpg" alt="" />
-          <p class="desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-            consequatur asperiores alias blanditiis nobis quam iste possimus,
-            deserunt doloremque necessitatibus rerum doloribus totam quo
-            accusamus dolorem nostrum culpa, itaque repellendus!
-          </p>
-          <div class="button">
-            <i class="ph-thin ph-shopping-bag buy_icon"></i>
-            <a href="#" class="buy_btn">$150</a>
+        <div class="card_container" data-item="nenek" data-aos="zoom-in">
+          <!-- Image with hover effect -->
+          <div class="overflow-hidden">
+            <img
+              src="assets/img/products card/gradma-1.jpg"
+              alt="Product Image"
+              class="card_img"
+            />
+          </div>
+
+          <!-- Card Content -->
+          <div class="p-4">
+            <div class="flex justify-between items-start">
+              <!-- Product Info -->
+              <div>
+                <h2 class="card_name">Product Name</h2>
+                <div class="flex items-center mt-1">
+                  <span class="text-gray-900 text-xl font-bold">99.00</span>
+                  <span class="text-gray-500 line-through ml-2">149.00</span>
+                </div>
+              </div>
+              <!-- Favorite Icon -->
+              <button class="text-gray-400 hover:text-red-500">
+                <i class="ph ph-heart"></i>
+              </button>
+            </div>
+
+            <!-- Button -->
+            <button class="card_btn">BELI</button>
           </div>
         </div>
-        <div class="card_item" data-item="nenek">
-          <img src="./assets/img/products card/grandma-3.jpg" alt="" />
-          <p class="desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-            consequatur asperiores alias blanditiis nobis quam iste possimus,
-            deserunt doloremque necessitatibus rerum doloribus totam quo
-            accusamus dolorem nostrum culpa, itaque repellendus!
-          </p>
-          <div class="button">
-            <i class="ph-thin ph-shopping-bag buy_icon"></i>
-            <a href="#" class="buy_btn">$150</a>
+        <div class="card_container" data-item="nenek" data-aos="zoom-in">
+          <!-- Image with hover effect -->
+          <div class="overflow-hidden">
+            <img
+              src="assets/img/products card/grandma-2.jpg"
+              alt="Product Image"
+              class="card_img"
+            />
+          </div>
+
+          <!-- Card Content -->
+          <div class="p-4">
+            <div class="flex justify-between items-start">
+              <!-- Product Info -->
+              <div>
+                <h2 class="card_name">Product Name</h2>
+                <div class="flex items-center mt-1">
+                  <span class="text-gray-900 text-xl font-bold">99.00</span>
+                  <span class="text-gray-500 line-through ml-2">149.00</span>
+                </div>
+              </div>
+              <!-- Favorite Icon -->
+              <button class="text-gray-400 hover:text-red-500">
+                <i class="ph ph-heart"></i>
+              </button>
+            </div>
+
+            <!-- Button -->
+            <button class="card_btn">BELI</button>
           </div>
         </div>
-        <div class="card_item" data-item="nenek">
-          <img src="./assets/img/products card/grandma-2.jpg" alt="" />
-          <p class="desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-            consequatur asperiores alias blanditiis nobis quam iste possimus,
-            deserunt doloremque necessitatibus rerum doloribus totam quo
-            accusamus dolorem nostrum culpa, itaque repellendus!
-          </p>
-          <div class="button">
-            <i class="ph-thin ph-shopping-bag buy_icon"></i>
-            <a href="#" class="buy_btn">$150</a>
+        <div class="card_container" data-item="nenek" data-aos="zoom-in">
+          <!-- Image with hover effect -->
+          <div class="overflow-hidden">
+            <img
+              src="assets/img/products card/grandma-3.jpg"
+              alt="Product Image"
+              class="card_img"
+            />
+          </div>
+
+          <!-- Card Content -->
+          <div class="p-4">
+            <div class="flex justify-between items-start">
+              <!-- Product Info -->
+              <div>
+                <h2 class="card_name">Product Name</h2>
+                <div class="flex items-center mt-1">
+                  <span class="text-gray-900 text-xl font-bold">99.00</span>
+                  <span class="text-gray-500 line-through ml-2">149.00</span>
+                </div>
+              </div>
+              <!-- Favorite Icon -->
+              <button class="text-gray-400 hover:text-red-500">
+                <i class="ph ph-heart"></i>
+              </button>
+            </div>
+
+            <!-- Button -->
+            <button class="card_btn">BELI</button>
           </div>
         </div>
       </div>
     </section>
 
+    <footer class="bg-gray-900 py-12">
+      <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+        <!-- Left Column - About -->
+        <div class="space-y-4">
+          <h2 class="text-lg font-semibold text-gray-50">About Us</h2>
+          <p class="text-gray-400">
+            Lorem ipsum dolor sit amet consectetur. Purus in etiam risus ut sem
+            eu urna. Massa feugiat consequat nec libero.
+          </p>
+          <p class="text-gray-400">Lorem ipsum dolor sit</p>
+        </div>
+
+        <!-- Middle Column - Products Section -->
+        <div class="space-y-4">
+          <h2 class="text-lg font-semibold text-gray-50">Our Products</h2>
+          <ul class="space-y-2">
+            <li>
+              <a href="#" class="hover:text-gray-500 text-gray-200"
+                >Baju Cowok</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-gray-500 text-gray-200"
+                >Baju Cowo Kece</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-gray-500 text-gray-200"
+                >Gaun Nge date</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-gray-500 text-gray-200"
+                >Baju Anak Imoet</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-gray-500 text-gray-200"
+                >Baju Omma🤗</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Middle Column - Quick Links -->
+        <div class="space-y-4">
+          <h2 class="text-lg font-semibold text-gray-50">Quick Links</h2>
+          <ul class="space-y-2">
+            <li>
+              <a href="#" class="hover:text-gray-500 text-gray-200">Service</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-gray-500 text-gray-200">Features</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-gray-500 text-gray-200">Our Team</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-gray-500 text-gray-200"
+                >Portfolio</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-gray-500 text-gray-200">Blog</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-gray-500 text-gray-200"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right Column - Contact Info and Social Icons -->
+        <div class="space-y-6">
+          <div class="flex flex-col space-y-2">
+            <input
+              class="p-3 w-full rounded-md text-gray-900 focus:ring-2 focus:ring-white"
+              type="text"
+              placeholder="Enter Your Email or Phone no."
+            />
+            <button
+              class="p-3 bg-gray-800 text-gray-100 rounded-md hover:bg-gray-700 transition"
+            >
+              Send
+            </button>
+          </div>
+          <div class="flex space-x-4 justify-center md:justify-start">
+            <a href="#" class="text-white hover:text-gray-400 transition">
+              <i class="ph-facebook-logo ph-light text-3xl"></i>
+            </a>
+            <a href="#" class="text-white hover:text-gray-400 transition">
+              <i class="ph-instagram-logo ph-light text-3xl"></i>
+            </a>
+            <a href="#" class="text-white hover:text-gray-400 transition">
+              <i class="ph-whatsapp-logo ph-light text-3xl"></i>
+            </a>
+            <a href="#" class="text-white hover:text-gray-400 transition">
+              <i class="ph-linkedin-logo ph-light text-3xl"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="mt-10 border-t border-gray-800 pt-6">
+        <div
+          class="container mx-auto px-4 text-center md:flex md:justify-between text-gray-400"
+        >
+          <p>8819 Ohio St. South Gate, CA 90280</p>
+          <p>CrossLine@hello.com | +91 386-688-3295</p>
+        </div>
+      </div>
+    </footer>
     <script src="main.js"></script>
     <script src="./node_modules/flowbite/dist/flowbite.min.js"></script>
   </body>

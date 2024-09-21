@@ -7,6 +7,7 @@
     "dev": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch"
   },
   "dependencies": {
+    "aos": "^2.3.4",
     "flowbite": "^2.5.1"
   }
 }
