@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dropdown Example</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 flex items-center justify-center h-screen">
+    <!-- Dropdown Container -->
+    <div class="kategori py-2">
+      <input type="checkbox" name="check" id="check" class="peer hidden" />
+      <label for="check" class="flex items-center justify-between"
+        ><p>Pria</p>
+        <i class="ph ph-caret-right"></i
+      ></label>
+      <div
+        class="kategori2 transition-[max-height] duration-300 border border-black w-full max-h-0 overflow-hidden mb-2 peer-checked:max-h-40"
+      >
+        <ul>
+          <li>Baju</li>
+          <li>Baju</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

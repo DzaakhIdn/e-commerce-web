@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enhanced E-commerce Page</title>
+    <script src="https://unpkg.com/phosphor-icons"></script>
+    <link rel="stylesheet" href="src/output.css" />
+    <style>
+      /* Custom scrollbar for horizontal overflow */
+      .scrollable-x {
+        overflow-x: auto;
+        scroll-behavior: smooth;
+      }
+
+      .scrollable-x::-webkit-scrollbar {
+        height: 6px;
+      }
+      .scrollable-x::-webkit-scrollbar-thumb {
+        background-color: #a0aec0;
+        border-radius: 10px;
+      }
+
+      /* Dropdown Transition */
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        z-index: 1;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 text-gray-800">
+    <!-- Navigation / Breadcrumbs -->
+    <nav class="navbar border flex justify-between sticky mb-8">
+      <div class="bungkus flex-row lg:flex-row-reverse justify-between">
+        <div class="flex items-center justify-start border-l lg:border-l-0">
+          <input
+            type="checkbox"
+            name="hamburger"
+            id="hamburger"
+            class="peer hidden"
+          />
+          <label
+            for="hamburger"
+            class="peer-checked:hamburger block relative z-50 p-6 -mr-6 cursor-pointer lg:hidden"
+          >
+            <div
+              aria-hidden="true"
+              class="m-auto h-0.5 w-6 rounded bg-sky-900 transition duration-300"
+            ></div>
+            <div
+              aria-hidden="true"
+              class="m-auto mt-2 h-0.5 w-6 rounded bg-sky-900 transition duration-300"
+            ></div>
+          </label>
+
+          <div
+            class="peer-checked:translate-x-0 fixed inset-0 w-[calc(100%-10rem)] translate-x-[-100%] bg-white/20 ring-black/5 backdrop-blur-md border-r shadow-xl transition duration-300 lg:border-r-0 lg:w-auto lg:static lg:shadow-none lg:translate-x-0 lg:bg-white lg:backdrop-blur-none z-40"
+          >
+            <div class="flex flex-col h-full lg:items-center lg:flex-row">
+              <ul
+                class="px-6 pt-32 text-gray-700 space-y-8 md:px-12 lg:space-y-0 lg:flex lg:space-x-12 lg:pt-0"
+              >
+                <div class="profile-mb">
+                  <i class="ph ph-user"></i>
+                  <label class="swap swap-rotate">
+                    <!-- this hidden checkbox controls the state -->
+                    <input
+                      type="checkbox"
+                      class="theme-controller hidden"
+                      value="synthwave"
+                    />
+
+                    <!-- sun icon -->
+                    <svg
+                      class="swap-off h-9 w-9 fill-current"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"
+                      />
+                    </svg>
+                    <svg
+                      class="swap-on h-9 w-9 fill-current"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"
+                      />
+                    </svg>
+                  </label>
+                </div>
+                <li>
+                  <a
+                    href="#"
+                    class="group relative before:absolute before:inset-x-0 before:bottom-0 before:h-2 before:border-b border-slate-900"
+                  >
+                    <span class="relative text-cyan-800">Home</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="group relative before:absolute before:inset-x-0 before:bottom-0 before:h-2 before:origin-right before:scale-x-0 before:bg-cyan-100 before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100"
+                  >
+                    <span class="relative group-hover:text-cyan-800"
+                      >Services</span
+                    >
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="group relative before:absolute before:inset-x-0 before:bottom-0 before:h-2 before:origin-right before:scale-x-0 before:bg-cyan-100 before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100"
+                  >
+                    <span class="relative group-hover:text-cyan-800"
+                      >Portfolio</span
+                    >
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="group relative before:absolute before:inset-x-0 before:bottom-0 before:h-2 before:origin-right before:scale-x-0 before:bg-cyan-100 before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100"
+                  >
+                    <span class="relative group-hover:text-cyan-800"
+                      >About us</span
+                    >
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <img
+          src="assets/img/logo.png"
+          alt="logo"
+          class="w-auto h-12 hidden lg:inline"
+        />
+      </div>
+
+      <img src="assets/img/logo.png" alt="logo" class="w-auto h-12 lg:hidden" />
+
+      <div class="search-cart">
+        <i class="ph ph-magnifying-glass"></i>
+        <i class="ph ph-shopping-bag-open"></i>
+        <i class="ph ph-user hidden lg:inline"></i>
+        <label class="swap swap-rotate hidden lg:inline-grid">
+          <!-- this hidden checkbox controls the state -->
+          <input
+            type="checkbox"
+            class="theme-controller hidden"
+            value="synthwave"
+          />
+
+          <!-- sun icon -->
+          <svg
+            class="swap-off h-9 w-9 fill-current"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"
+            />
+          </svg>
+
+          <!-- moon icon -->
+          <svg
+            class="swap-on h-9 w-9 fill-current"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"
+            />
+          </svg>
+        </label>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 flex flex-col lg:flex-row">
+      <!-- Sidebar Filters -->
+      <aside
+        class="w-full lg:w-1/4 p-6 bg-white rounded-lg shadow-lg mb-6 lg:mb-0"
+      >
+        <div class="flex justify-between w-full items-center">
+          <h3 class="font-semibold text-xl mb-4 flex items-center">Filters</h3>
+          <i class="ph ph-sliders-horizontal text-lg"></i>
+        </div>
+        <br />
+        <hr />
+        <!-- Categories -->
+        <div class="categories_container transition-all duration-300">
+          <div class="kategori">
+            <input type="checkbox" name="check" id="Pria" class="peer hidden" />
+            <label for="Pria" class="flex items-center justify-between"
+              ><p>Pria</p>
+              <i class="ph ph-caret-right"></i
+            ></label>
+            <div
+              class="kategori2 transition-[max-height] duration-300 w-full max-h-0 overflow-hidden mb-2 peer-checked:max-h-40"
+            >
+              <ul class="text-gray-300">
+                <li>Baju</li>
+                <li>Baju</li>
+              </ul>
+            </div>
+          </div>
+          <div class="kategori">
+            <input
+              type="checkbox"
+              name="check"
+              id="Wanita"
+              class="peer hidden"
+            />
+            <label for="Wanita" class="flex items-center justify-between"
+              ><p>Wanita</p>
+              <i class="ph ph-caret-right"></i
+            ></label>
+            <div
+              class="kategori2 transition-[max-height] duration-300 w-full max-h-0 overflow-hidden mb-2 peer-checked:max-h-40"
+            >
+              <ul class="text-gray-300">
+                <li>Baju</li>
+                <li>Baju</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <br />
+        <hr />
+        <br />
+        <!-- Price Filter -->
+        <div class="mb-8">
+          <h4 class="font-medium mb-2">Price</h4>
+          <div class="flex items-center space-x-2">
+            <input
+              type="range"
+              min="50"
+              max="200"
+              id="price-range"
+              class="w-full"
+            />
+            <span class="text-gray-500"
+              >$<span id="price-value">100</span></span
+            >
+          </div>
+        </div>
+        <br />
+        <hr />
+        <br />
+        <!-- Colors Filter -->
+        <div class="mb-8">
+          <h4 class="font-medium mb-2">Colors</h4>
+          <div class="flex space-x-2">
+            <button
+              class="w-8 h-8 rounded-full bg-red-500 focus:ring-2 focus:ring-offset-1"
+            ></button>
+            <button
+              class="w-8 h-8 rounded-full bg-blue-500 focus:ring-2 focus:ring-offset-1"
+            ></button>
+            <button
+              class="w-8 h-8 rounded-full bg-green-500 focus:ring-2 focus:ring-offset-1"
+            ></button>
+            <button
+              class="w-8 h-8 rounded-full bg-yellow-500 focus:ring-2 focus:ring-offset-1"
+            ></button>
+            <button
+              class="w-8 h-8 rounded-full bg-black focus:ring-2 focus:ring-offset-1"
+            ></button>
+          </div>
+        </div>
+        <br />
+        <hr />
+        <br />
+        <!-- Size Filter -->
+        <div class="mb-8">
+          <h4 class="font-medium mb-2 flex items-center">
+            <i class="ph ph-ruler mr-2"></i> Size
+          </h4>
+          <div class="flex flex-wrap gap-2">
+            <button
+              class="border px-4 py-2 rounded hover:bg-gray-200 transition"
+            >
+              Small
+            </button>
+            <button
+              class="border px-4 py-2 rounded hover:bg-gray-200 transition"
+            >
+              Medium
+            </button>
+            <button
+              class="border px-4 py-2 rounded hover:bg-gray-200 transition"
+            >
+              Large
+            </button>
+          </div>
+        </div>
+        <br />
+        <hr />
+        <br />
+        <!-- Dress Style Filter -->
+        <div class="mb-4">
+          <h4 class="font-medium mb-2 flex items-center">
+            <i class="ph ph-shirt-folded mr-2"></i> Dress Style
+          </h4>
+          <ul class="space-y-2">
+            <li>
+              <label><input type="checkbox" class="mr-2" />Casual</label>
+            </li>
+            <li>
+              <label><input type="checkbox" class="mr-2" />Formal</label>
+            </li>
+            <li>
+              <label><input type="checkbox" class="mr-2" />Party</label>
+            </li>
+          </ul>
+        </div>
+        <button
+          class="w-full bg-black text-white py-3 rounded-full hover:bg-gray-800 transition"
+        >
+          Apply Filters
+        </button>
+      </aside>
+
+      <!-- Product Listing -->
+      <div class="w-full lg:w-3/4 p-6">
+        <div class="flex justify-between items-center mb-6">
+          <h2 class="text-2xl font-semibold">Casual</h2>
+          <div class="relative inline-block text-left dropdown">
+            <button
+              class="flex items-center text-gray-700 hover:text-gray-900 transition"
+            >
+              Sort by: Most Popular <i class="ph ph-caret-down ml-2"></i>
+            </button>
+            <div
+              class="dropdown-content bg-white shadow-lg rounded-lg p-4 mt-2"
+            >
+              <button
+                class="block text-left w-full hover:bg-gray-100 px-2 py-1"
+              >
+                Most Popular
+              </button>
+              <button
+                class="block text-left w-full hover:bg-gray-100 px-2 py-1"
+              >
+                Lowest Price
+              </button>
+              <button
+                class="block text-left w-full hover:bg-gray-100 px-2 py-1"
+              >
+                Highest Price
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Product Card -->
+          <div class="card_container" data-item="pria" data-aos="zoom-in">
+            <!-- Image with hover effect -->
+            <div class="overflow-hidden">
+              <img
+                src="assets/img/products card/male-1.jpg"
+                alt="Product Image"
+                class="card_img"
+              />
+            </div>
+  
+            <!-- Card Content -->
+            <div class="p-4">
+              <div class="flex justify-between items-start">
+                <!-- Product Info -->
+                <div>
+                  <h2 class="card_name">Product Name</h2>
+                  <div class="flex items-center mt-1">
+                    <span class="text-gray-900 text-xl font-bold">99.00</span>
+                    <span class="text-gray-500 line-through ml-2">149.00</span>
+                  </div>
+                </div>
+                <!-- Favorite Icon -->
+                <button class="text-gray-400 hover:text-red-500">
+                  <i class="ph ph-heart"></i>
+                </button>
+              </div>
+  
+              <!-- Button -->
+              <button class="card_btn">BELI</button>
+            </div>
+          </div>
+          <div class="card_container" data-item="pria" data-aos="zoom-in">
+            <!-- Image with hover effect -->
+            <div class="overflow-hidden">
+              <img
+                src="assets/img/products card/male-1.jpg"
+                alt="Product Image"
+                class="card_img"
+              />
+            </div>
+  
+            <!-- Card Content -->
+            <div class="p-4">
+              <div class="flex justify-between items-start">
+                <!-- Product Info -->
+                <div>
+                  <h2 class="card_name">Product Name</h2>
+                  <div class="flex items-center mt-1">
+                    <span class="text-gray-900 text-xl font-bold">99.00</span>
+                    <span class="text-gray-500 line-through ml-2">149.00</span>
+                  </div>
+                </div>
+                <!-- Favorite Icon -->
+                <button class="text-gray-400 hover:text-red-500">
+                  <i class="ph ph-heart"></i>
+                </button>
+              </div>
+  
+              <!-- Button -->
+              <button class="card_btn">BELI</button>
+            </div>
+          </div>
+          <div class="card_container" data-item="pria" data-aos="zoom-in">
+            <!-- Image with hover effect -->
+            <div class="overflow-hidden">
+              <img
+                src="assets/img/products card/male-1.jpg"
+                alt="Product Image"
+                class="card_img"
+              />
+            </div>
+  
+            <!-- Card Content -->
+            <div class="p-4">
+              <div class="flex justify-between items-start">
+                <!-- Product Info -->
+                <div>
+                  <h2 class="card_name">Product Name</h2>
+                  <div class="flex items-center mt-1">
+                    <span class="text-gray-900 text-xl font-bold">99.00</span>
+                    <span class="text-gray-500 line-through ml-2">149.00</span>
+                  </div>
+                </div>
+                <!-- Favorite Icon -->
+                <button class="text-gray-400 hover:text-red-500">
+                  <i class="ph ph-heart"></i>
+                </button>
+              </div>
+  
+              <!-- Button -->
+              <button class="card_btn">BELI</button>
+            </div>
+          </div>
+          <div class="card_container" data-item="pria" data-aos="zoom-in">
+            <!-- Image with hover effect -->
+            <div class="overflow-hidden">
+              <img
+                src="assets/img/products card/male-1.jpg"
+                alt="Product Image"
+                class="card_img"
+              />
+            </div>
+  
+            <!-- Card Content -->
+            <div class="p-4">
+              <div class="flex justify-between items-start">
+                <!-- Product Info -->
+                <div>
+                  <h2 class="card_name">Product Name</h2>
+                  <div class="flex items-center mt-1">
+                    <span class="text-gray-900 text-xl font-bold">99.00</span>
+                    <span class="text-gray-500 line-through ml-2">149.00</span>
+                  </div>
+                </div>
+                <!-- Favorite Icon -->
+                <button class="text-gray-400 hover:text-red-500">
+                  <i class="ph ph-heart"></i>
+                </button>
+              </div>
+  
+              <!-- Button -->
+              <button class="card_btn">BELI</button>
+            </div>
+          </div>
+          <div class="card_container" data-item="pria" data-aos="zoom-in">
+            <!-- Image with hover effect -->
+            <div class="overflow-hidden">
+              <img
+                src="assets/img/products card/male-1.jpg"
+                alt="Product Image"
+                class="card_img"
+              />
+            </div>
+  
+            <!-- Card Content -->
+            <div class="p-4">
+              <div class="flex justify-between items-start">
+                <!-- Product Info -->
+                <div>
+                  <h2 class="card_name">Product Name</h2>
+                  <div class="flex items-center mt-1">
+                    <span class="text-gray-900 text-xl font-bold">99.00</span>
+                    <span class="text-gray-500 line-through ml-2">149.00</span>
+                  </div>
+                </div>
+                <!-- Favorite Icon -->
+                <button class="text-gray-400 hover:text-red-500">
+                  <i class="ph ph-heart"></i>
+                </button>
+              </div>
+  
+              <!-- Button -->
+              <button class="card_btn">BELI</button>
+            </div>
+          </div>
+          <div class="card_container" data-item="pria" data-aos="zoom-in">
+            <!-- Image with hover effect -->
+            <div class="overflow-hidden">
+              <img
+                src="assets/img/products card/male-1.jpg"
+                alt="Product Image"
+                class="card_img"
+              />
+            </div>
+  
+            <!-- Card Content -->
+            <div class="p-4">
+              <div class="flex justify-between items-start">
+                <!-- Product Info -->
+                <div>
+                  <h2 class="card_name">Product Name</h2>
+                  <div class="flex items-center mt-1">
+                    <span class="text-gray-900 text-xl font-bold">99.00</span>
+                    <span class="text-gray-500 line-through ml-2">149.00</span>
+                  </div>
+                </div>
+                <!-- Favorite Icon -->
+                <button class="text-gray-400 hover:text-red-500">
+                  <i class="ph ph-heart"></i>
+                </button>
+              </div>
+  
+              <!-- Button -->
+              <button class="card_btn">BELI</button>
+            </div>
+          </div>
+
+          <!-- Add more product cards similar to this -->
+        </div>
+
+        <!-- Pagination -->
+        <div class="flex justify-center mt-8 space-x-2">
+          <button class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">
+            Previous
+          </button>
+          <button class="px-4 py-2 bg-black text-white rounded">1</button>
+          <button class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">
+            2
+          </button>
+          <button class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">
+            Next
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    
+
+    <script>
+      // Price Range Update
+      const priceRange = document.getElementById("price-range");
+      const priceValue = document.getElementById("price-value");
+      priceRange.addEventListener("input", () => {
+        priceValue.innerText = priceRange.value;
+      });
+
+      // Dropdown Toggle (For Sort by)
+      const dropdowns = document.querySelectorAll(".dropdown");
+      dropdowns.forEach((dropdown) => {
+        dropdown.addEventListener("click", function () {
+          this.querySelector(".dropdown-content").classList.toggle("hidden");
+        });
+      });
+
+      // Horizontal Scrolling for Products
+      const productContainer = document.querySelector(".scrollable-x");
+      if (productContainer) {
+        productContainer.addEventListener("wheel", (event) => {
+          if (event.deltaY > 0 || event.deltaY < 0) {
+            event.preventDefault();
+            productContainer.scrollBy({
+              left: event.deltaY,
+              behavior: "smooth",
+            });
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
