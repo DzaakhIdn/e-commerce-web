@@ -7,6 +7,9 @@
     <script src="https://unpkg.com/phosphor-icons"></script>
     <link rel="stylesheet" href="src/output.css" />
     <style>
+      i {
+        font-size: 25px;
+      }
       /* Custom scrollbar for horizontal overflow */
       .scrollable-x {
         overflow-x: auto;
@@ -33,7 +36,7 @@
       }
     </style>
   </head>
-  <body class="bg-gray-50 text-gray-800">
+  <body class="text-gray-800">
     <!-- Navigation / Breadcrumbs -->
     <nav class="navbar border flex justify-between sticky mb-8">
       <div class="bungkus flex-row lg:flex-row-reverse justify-between">
@@ -185,16 +188,18 @@
     </nav>
 
     <!-- Main Content -->
-    <div class="container mx-auto px-4 flex flex-col lg:flex-row">
+    <div
+      class="relative overflow-hidden container mx-auto px-4 flex flex-col lg:flex-row"
+    >
       <!-- Sidebar Filters -->
+      <!-- Mobile -->
       <aside
-        class="w-full lg:w-1/4 p-6 bg-white rounded-lg shadow-lg mb-6 lg:mb-0"
+        class="absolute flex flex-col gap-3 w-full translate-x-full overflow-hidden h-auto lg:w-1/4 p-6 bg-white rounded-lg border border-gray-200 mb-6 lg:mb-0"
       >
         <div class="flex justify-between w-full items-center">
           <h3 class="font-semibold text-xl mb-4 flex items-center">Filters</h3>
-          <i class="ph ph-sliders-horizontal text-lg"></i>
+          <i class="ph ph-sliders-horizontal"></i>
         </div>
-        <br />
         <hr />
         <!-- Categories -->
         <div class="categories_container transition-all duration-300">
@@ -234,9 +239,7 @@
             </div>
           </div>
         </div>
-        <br />
         <hr />
-        <br />
         <!-- Price Filter -->
         <div class="mb-8">
           <h4 class="font-medium mb-2">Price</h4>
@@ -253,9 +256,7 @@
             >
           </div>
         </div>
-        <br />
         <hr />
-        <br />
         <!-- Colors Filter -->
         <div class="mb-8">
           <h4 class="font-medium mb-2">Colors</h4>
@@ -277,9 +278,7 @@
             ></button>
           </div>
         </div>
-        <br />
         <hr />
-        <br />
         <!-- Size Filter -->
         <div class="mb-8">
           <h4 class="font-medium mb-2 flex items-center">
@@ -303,9 +302,147 @@
             </button>
           </div>
         </div>
-        <br />
         <hr />
-        <br />
+        <!-- Dress Style Filter -->
+        <div class="mb-4">
+          <h4 class="font-medium mb-2 flex items-center">
+            <i class="ph ph-shirt-folded mr-2"></i> Dress Style
+          </h4>
+          <ul class="space-y-2">
+            <li>
+              <label><input type="checkbox" class="mr-2" />Casual</label>
+            </li>
+            <li>
+              <label><input type="checkbox" class="mr-2" />Formal</label>
+            </li>
+            <li>
+              <label><input type="checkbox" class="mr-2" />Party</label>
+            </li>
+          </ul>
+        </div>
+        <button
+          class="w-full bg-black text-white py-3 rounded-full hover:bg-gray-800 transition"
+        >
+          Apply Filters
+        </button>
+      </aside>
+
+      <button class="btn_filter">
+        <p class=" text-white">Filter</p>
+        <i class="ph ph-funnel-simple text-white"></i>
+      </button>
+
+      <!-- Lg -->
+      <aside
+        class="lg:flex flex-col gap-3 w-full hidden transition-[max-height] duration-500 overflow-hidden lg:h-auto lg:w-1/4 p-6 bg-white rounded-lg border border-gray-200 mb-6 lg:mb-0"
+      >
+        <div class="flex justify-between w-full items-center">
+          <h3 class="font-semibold text-xl mb-4 flex items-center">Filters</h3>
+          <i class="ph ph-sliders-horizontal"></i>
+        </div>
+        <hr />
+        <!-- Categories -->
+        <div class="categories_container transition-all duration-300">
+          <div class="kategori">
+            <input type="checkbox" name="check" id="Pria" class="peer hidden" />
+            <label for="Pria" class="flex items-center justify-between"
+              ><p>Pria</p>
+              <i class="ph ph-caret-right"></i
+            ></label>
+            <div
+              class="kategori2 transition-[max-height] duration-300 w-full max-h-0 overflow-hidden mb-2 peer-checked:max-h-40"
+            >
+              <ul class="text-gray-300">
+                <li>Baju</li>
+                <li>Baju</li>
+              </ul>
+            </div>
+          </div>
+          <div class="kategori">
+            <input
+              type="checkbox"
+              name="check"
+              id="Wanita"
+              class="peer hidden"
+            />
+            <label for="Wanita" class="flex items-center justify-between"
+              ><p>Wanita</p>
+              <i class="ph ph-caret-right"></i
+            ></label>
+            <div
+              class="kategori2 transition-[max-height] duration-300 w-full max-h-0 overflow-hidden mb-2 peer-checked:max-h-40"
+            >
+              <ul class="text-gray-300">
+                <li>Baju</li>
+                <li>Baju</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <!-- Price Filter -->
+        <div class="mb-8">
+          <h4 class="font-medium mb-2">Price</h4>
+          <div class="flex items-center space-x-2">
+            <input
+              type="range"
+              min="50"
+              max="200"
+              id="price-range"
+              class="w-full"
+            />
+            <span class="text-gray-500"
+              >$<span id="price-value">100</span></span
+            >
+          </div>
+        </div>
+        <hr />
+        <!-- Colors Filter -->
+        <div class="mb-8">
+          <h4 class="font-medium mb-2">Colors</h4>
+          <div class="flex space-x-2">
+            <button
+              class="w-8 h-8 rounded-full bg-red-500 focus:ring-2 focus:ring-offset-1"
+            ></button>
+            <button
+              class="w-8 h-8 rounded-full bg-blue-500 focus:ring-2 focus:ring-offset-1"
+            ></button>
+            <button
+              class="w-8 h-8 rounded-full bg-green-500 focus:ring-2 focus:ring-offset-1"
+            ></button>
+            <button
+              class="w-8 h-8 rounded-full bg-yellow-500 focus:ring-2 focus:ring-offset-1"
+            ></button>
+            <button
+              class="w-8 h-8 rounded-full bg-black focus:ring-2 focus:ring-offset-1"
+            ></button>
+          </div>
+        </div>
+        <hr />
+        <!-- Size Filter -->
+        <div class="mb-8">
+          <h4 class="font-medium mb-2 flex items-center">
+            <i class="ph ph-ruler mr-2"></i> Size
+          </h4>
+          <div class="flex flex-wrap gap-2">
+            <button
+              class="border px-4 py-2 rounded hover:bg-gray-200 transition"
+            >
+              Small
+            </button>
+            <button
+              class="border px-4 py-2 rounded hover:bg-gray-200 transition"
+            >
+              Medium
+            </button>
+            <button
+              class="border px-4 py-2 rounded hover:bg-gray-200 transition"
+            >
+              Large
+            </button>
+          </div>
+        </div>
+        <hr />
         <!-- Dress Style Filter -->
         <div class="mb-4">
           <h4 class="font-medium mb-2 flex items-center">
@@ -363,7 +500,7 @@
         </div>
 
         <!-- Product Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           <!-- Product Card -->
           <div class="card_container" data-item="pria" data-aos="zoom-in">
             <!-- Image with hover effect -->
@@ -374,7 +511,7 @@
                 class="card_img"
               />
             </div>
-  
+
             <!-- Card Content -->
             <div class="p-4">
               <div class="flex justify-between items-start">
@@ -391,7 +528,7 @@
                   <i class="ph ph-heart"></i>
                 </button>
               </div>
-  
+
               <!-- Button -->
               <button class="card_btn">BELI</button>
             </div>
@@ -405,7 +542,7 @@
                 class="card_img"
               />
             </div>
-  
+
             <!-- Card Content -->
             <div class="p-4">
               <div class="flex justify-between items-start">
@@ -422,7 +559,7 @@
                   <i class="ph ph-heart"></i>
                 </button>
               </div>
-  
+
               <!-- Button -->
               <button class="card_btn">BELI</button>
             </div>
@@ -436,7 +573,7 @@
                 class="card_img"
               />
             </div>
-  
+
             <!-- Card Content -->
             <div class="p-4">
               <div class="flex justify-between items-start">
@@ -453,7 +590,7 @@
                   <i class="ph ph-heart"></i>
                 </button>
               </div>
-  
+
               <!-- Button -->
               <button class="card_btn">BELI</button>
             </div>
@@ -467,7 +604,7 @@
                 class="card_img"
               />
             </div>
-  
+
             <!-- Card Content -->
             <div class="p-4">
               <div class="flex justify-between items-start">
@@ -484,7 +621,7 @@
                   <i class="ph ph-heart"></i>
                 </button>
               </div>
-  
+
               <!-- Button -->
               <button class="card_btn">BELI</button>
             </div>
@@ -498,7 +635,7 @@
                 class="card_img"
               />
             </div>
-  
+
             <!-- Card Content -->
             <div class="p-4">
               <div class="flex justify-between items-start">
@@ -515,7 +652,7 @@
                   <i class="ph ph-heart"></i>
                 </button>
               </div>
-  
+
               <!-- Button -->
               <button class="card_btn">BELI</button>
             </div>
@@ -529,7 +666,7 @@
                 class="card_img"
               />
             </div>
-  
+
             <!-- Card Content -->
             <div class="p-4">
               <div class="flex justify-between items-start">
@@ -546,7 +683,7 @@
                   <i class="ph ph-heart"></i>
                 </button>
               </div>
-  
+
               <!-- Button -->
               <button class="card_btn">BELI</button>
             </div>
@@ -572,37 +709,7 @@
     </div>
 
     <!-- Footer -->
-    
 
-    <script>
-      // Price Range Update
-      const priceRange = document.getElementById("price-range");
-      const priceValue = document.getElementById("price-value");
-      priceRange.addEventListener("input", () => {
-        priceValue.innerText = priceRange.value;
-      });
-
-      // Dropdown Toggle (For Sort by)
-      const dropdowns = document.querySelectorAll(".dropdown");
-      dropdowns.forEach((dropdown) => {
-        dropdown.addEventListener("click", function () {
-          this.querySelector(".dropdown-content").classList.toggle("hidden");
-        });
-      });
-
-      // Horizontal Scrolling for Products
-      const productContainer = document.querySelector(".scrollable-x");
-      if (productContainer) {
-        productContainer.addEventListener("wheel", (event) => {
-          if (event.deltaY > 0 || event.deltaY < 0) {
-            event.preventDefault();
-            productContainer.scrollBy({
-              left: event.deltaY,
-              behavior: "smooth",
-            });
-          }
-        });
-      }
-    </script>
+    <script src="main.js"></script>
   </body>
 </html>

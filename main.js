@@ -1,35 +1,3 @@
-// class Card {
-//     constructor(cardEL){
-//         this.cardEL = cardEL
-//         this.image_wrapper = cardEL.querySelector('.card');
-//         const cardHeight = this.cardEL.getBoundingClientRect().height
-//         const imageWrapperHeight = this.image_wrapper.getBoundingClientRect().height
-//         this.heightDiff = cardHeight - imageWrapperHeight
-//         console.log("card kebuat")
-//     }
-
-//     update(){
-//         const topOffsetCard = this.cardEL.getBoundingClientRect().top
-//         const progres = topOffsetCard / window.innerHeight
-//         const yPosition = progres * this.heightDiff
-//         this.image_wrapper.style.transform = `translate(0, ${yPosition}px)`;
-//         console.log('update')
-//     }
-// }
-
-// function initCards(){
-//     const cardEls = document.querySelectorAll('.cards, .cards-2');
-//     const cards = Array.from(cardEls).map((cardEL) => new Card(cardEL));
-//     function onscroll(){
-//         cards.forEach(card => card.update())
-//     }
-//     window.addEventListener('scroll', onscroll)
-// }
-
-// initCards()
-
-// Card
-
 let filterBtn = document.querySelectorAll(".product_type .product_item");
 let filterableCards = document.querySelectorAll(".product-card .card_container");
 
@@ -48,4 +16,35 @@ const filterCards = e => {
 
 filterBtn.forEach(button => button.addEventListener("click", filterCards))
 
-AOS.init();
+// AOS.init();
+
+// Price Range Update
+const priceRange = document.getElementById("price-range");
+const priceValue = document.getElementById("price-value");
+priceRange.addEventListener("input", () => {
+  priceValue.innerText = priceRange.value;
+});
+
+// Dropdown Toggle (For Sort by)
+const dropdowns = document.querySelectorAll(".dropdown");
+dropdowns.forEach((dropdown) => {
+  dropdown.addEventListener("click", function () {
+    this.querySelector(".dropdown-content").classList.toggle("hidden");
+  });
+});
+
+// Horizontal Scrolling for Products
+const productContainer = document.querySelector(".scrollable-x");
+if (productContainer) {
+  productContainer.addEventListener("wheel", (event) => {
+    if (event.deltaY > 0 || event.deltaY < 0) {
+      event.preventDefault();
+      productContainer.scrollBy({
+        left: event.deltaY,
+        behavior: "smooth",
+      });
+    }
+  });
+}
+
+// Button Filter

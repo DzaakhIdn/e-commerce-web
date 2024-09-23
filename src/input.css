@@ -130,4 +130,13 @@
   .card_btn {
     @apply mt-4 w-full bg-gray-900 text-white py-2 rounded-lg hover:bg-gray-700;
   }
+
+  /* 
+  Katalog Page }
+  Main Content
+   */
+
+  .btn_filter {
+    @apply bg-gray-900 rounded-full py-3 px-4 absolute flex justify-between gap-2 text-white right-2;
+  }
 }
