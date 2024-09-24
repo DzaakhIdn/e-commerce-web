@@ -19,10 +19,15 @@ filterBtn.forEach(button => button.addEventListener("click", filterCards))
 // AOS.init();
 
 // Price Range Update
-const priceRange = document.getElementById("price-range");
-const priceValue = document.getElementById("price-value");
-priceRange.addEventListener("input", () => {
-  priceValue.innerText = priceRange.value;
+const priceRange = document.querySelectorAll(".price-range");
+const priceValue = document.querySelectorAll(".price-value");
+
+priceRange.forEach((range) => {
+  range.addEventListener("input", (event) => {
+    priceValue.forEach((value) => {
+      value.textContent = event.target.value;
+    });
+  });
 });
 
 // Dropdown Toggle (For Sort by)
@@ -48,3 +53,15 @@ if (productContainer) {
 }
 
 // Button Filter
+const filterModal = (openButtonSelector, modalOpenSelector, overlaySelector) => {
+  const openButton = document.querySelector(openButtonSelector);
+  const modalOpen = document.querySelector(modalOpenSelector);
+  const overlay = document.querySelector(overlaySelector);
+
+  openButton.addEventListener("click", () => {
+    modalOpen.classList.toggle("translate-x-full");
+    overlay.classList.toggle("opacity-50");
+  });
+
+}
+filterModal(".btn_filter", ".filter_mobile", ".overlay")

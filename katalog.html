@@ -62,7 +62,7 @@
           </label>
 
           <div
-            class="peer-checked:translate-x-0 fixed inset-0 w-[calc(100%-10rem)] translate-x-[-100%] bg-white/20 ring-black/5 backdrop-blur-md border-r shadow-xl transition duration-300 lg:border-r-0 lg:w-auto lg:static lg:shadow-none lg:translate-x-0 lg:bg-white lg:backdrop-blur-none z-40"
+            class="fixed inset-0 w-[calc(100%-10rem)] translate-x-[-100%] bg-white/20 ring-black/5 backdrop-blur-md border-r shadow-xl transition duration-300 lg:border-r-0 lg:w-auto lg:static lg:shadow-none lg:translate-x-0 lg:bg-white lg:backdrop-blur-none peer-checked:translate-x-0"
           >
             <div class="flex flex-col h-full lg:items-center lg:flex-row">
               <ul
@@ -189,13 +189,11 @@
 
     <!-- Main Content -->
     <div
-      class="relative overflow-hidden container mx-auto px-4 flex flex-col lg:flex-row"
+      class="relative overflow-hidden container mx-auto gap-5 flex flex-col lg:flex-row"
     >
       <!-- Sidebar Filters -->
       <!-- Mobile -->
-      <aside
-        class="absolute flex flex-col gap-3 w-full translate-x-full overflow-hidden h-auto lg:w-1/4 p-6 bg-white rounded-lg border border-gray-200 mb-6 lg:mb-0"
-      >
+      <aside class="filter_mobile translate-x-full">
         <div class="flex justify-between w-full items-center">
           <h3 class="font-semibold text-xl mb-4 flex items-center">Filters</h3>
           <i class="ph ph-sliders-horizontal"></i>
@@ -244,15 +242,9 @@
         <div class="mb-8">
           <h4 class="font-medium mb-2">Price</h4>
           <div class="flex items-center space-x-2">
-            <input
-              type="range"
-              min="50"
-              max="200"
-              id="price-range"
-              class="w-full"
-            />
+            <input type="range" min="50" max="200" class="price-range w-full" />
             <span class="text-gray-500"
-              >$<span id="price-value">100</span></span
+              >$<span class="price-value">100</span></span
             >
           </div>
         </div>
@@ -327,8 +319,10 @@
         </button>
       </aside>
 
+      <div class="overlay opacity-0"></div>
+      <!-- Filter Button -->
       <button class="btn_filter">
-        <p class=" text-white">Filter</p>
+        <p class="text-white">Filter</p>
         <i class="ph ph-funnel-simple text-white"></i>
       </button>
 
@@ -384,15 +378,9 @@
         <div class="mb-8">
           <h4 class="font-medium mb-2">Price</h4>
           <div class="flex items-center space-x-2">
-            <input
-              type="range"
-              min="50"
-              max="200"
-              id="price-range"
-              class="w-full"
-            />
+            <input type="range" min="50" max="200" class="price-range w-full" />
             <span class="text-gray-500"
-              >$<span id="price-value">100</span></span
+              >$<span class="price-value">100</span></span
             >
           </div>
         </div>
@@ -468,7 +456,7 @@
       </aside>
 
       <!-- Product Listing -->
-      <div class="w-full lg:w-3/4 p-6">
+      <div class="w-full lg:w-3/4 p-6 border border-gray-200 rounded-md">
         <div class="flex justify-between items-center mb-6">
           <h2 class="text-2xl font-semibold">Casual</h2>
           <div class="relative inline-block text-left dropdown">
