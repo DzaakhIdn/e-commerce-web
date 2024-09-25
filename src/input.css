@@ -8,19 +8,15 @@
   }
 
   /* Navbar */
-  .hamburger div:first-child {
-    @apply rotate-45 translate-y-1.5;
+  .mobile-menu {
+    @apply fixed z-30 inset-y-0 left-0 w-[250px] bg-white shadow-lg transition-transform duration-300 lg:hidden;
   }
-  .hamburger div:last-child {
-    @apply -rotate-45 -translate-y-1;
+  .hamburger-menu {
+    @apply block lg:hidden text-2xl text-gray-700 mr-4;
   }
-  .search-cart {
-    @apply flex gap-3 lg:gap-6 lg:text-base;
+  .link_nav {
+    @apply text-gray-700 relative before:absolute before:bg-gray-800 before:w-0 before:h-[2px] before:-bottom-1 before:left-0 hover:text-black hover:before:w-full before:transition-all before:duration-300;
   }
-  .profile-mb {
-    @apply bg-gray-100 flex justify-between items-center px-[30px] py-[20px] mt-10 lg:hidden;
-  }
-
   /* Header */
   .header {
     @apply w-full h-auto;
@@ -116,7 +112,7 @@
     @apply grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 mt-5;
   }
   .card_container {
-    @apply max-w-xs bg-white rounded-lg shadow-md overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl duration-300 ease-in-out;
+    @apply max-w-xs bg-white rounded-lg shadow-md overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl duration-300 ease-in-out relative z-0;
   }
   .card_container.hide {
     @apply hidden;
@@ -137,7 +133,7 @@
    */
 
   .btn_filter {
-    @apply bg-gray-900 rounded-full py-3 px-4 flex lg:hidden justify-between gap-2 text-white fixed right-2 bottom-7 z-30;
+    @apply border border-gray-300 rounded-full py-2 px-3 flex lg:hidden justify-between gap-2 text-white static;
   }
   .filter_mobile {
     @apply fixed flex lg:hidden flex-col gap-3 w-full m-auto overflow-hidden h-auto lg:w-1/4 p-6 bg-white rounded-lg border border-gray-200  z-30 transition-all duration-300;

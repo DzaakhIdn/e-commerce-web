@@ -1,66 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Responsive Navbar</title>
-  <script src="https://unpkg.com/phosphor-icons"></script>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="font-sans antialiased">
-
-  <!-- Promo Bar -->
-  <div class="bg-black text-white text-sm py-2 flex justify-center relative">
-    <span>Sign up and get 20% off your first order. <a href="#" class="underline">Sign Up Now</a></span>
-    <button class="absolute right-4 top-1/2 transform -translate-y-1/2 text-lg text-white">
-      <i class="ph-x"></i>
-    </button>
-  </div>
-
-  <!-- Navbar -->
-  <nav class="bg-white shadow-sm py-4">
-    <div class="container mx-auto flex items-center justify-between px-4 lg:px-8">
-      <!-- Hamburger Menu (Mobile) -->
-      <button class="block lg:hidden text-2xl text-gray-700 mr-4">
-        <i class="ph-list"></i>
-      </button>
-
-      <!-- Logo -->
-      <div class="text-2xl font-bold flex-grow lg:flex-grow-0">
-        <a href="#" class="text-black">SHOP.CO</a>
-      </div>
-
-      <!-- Links (Desktop) -->
-      <div class="hidden lg:flex space-x-8 text-sm font-medium">
-        <a href="#" class="text-gray-700 hover:text-black">Shop</a>
-        <a href="#" class="text-gray-700 hover:text-black">On Sale</a>
-        <a href="#" class="text-gray-700 hover:text-black">New Arrivals</a>
-        <a href="#" class="text-gray-700 hover:text-black">Brands</a>
-      </div>
-
-      <!-- Search bar (Desktop) -->
-      <div class="hidden lg:flex flex-grow max-w-lg items-center relative">
-        <input type="text" class="w-full py-2 pl-10 pr-4 rounded-full bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-300" placeholder="Search for products..." />
-        <i class="ph-magnifying-glass absolute left-3 text-gray-500"></i>
-      </div>
-
-      <!-- Icons (Desktop & Mobile) -->
-      <div class="flex space-x-4 items-center">
-        <a href="#" class="text-gray-700 text-xl hover:text-black lg:hidden">
-          <i class="ph-magnifying-glass"></i>
-        </a>
-        <a href="#" class="text-gray-700 text-xl hover:text-black">
-          <i class="ph-shopping-cart"></i>
-        </a>
-        <a href="#" class="text-gray-700 text-xl hover:text-black">
-          <i class="ph-user-circle"></i>
-        </a>
-      </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Navbar with Sidebar</title>
+    <script src="https://unpkg.com/phosphor-icons"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style></style>
+  </head>
+  <body class="font-sans antialiased">
+    <!-- Promo Bar -->
+    <div class="bg-black text-white text-sm py-2 flex justify-center relative">
+      <span
+        >Sign up and get 20% off your first order.
+        <a href="#" class="underline">Sign Up Now</a></span
+      >
     </div>
-  </nav>
 
-  <script>
-    // Optional: Add a JavaScript function for the hamburger menu if needed
-  </script>
-</body>
+    <!-- Navbar -->
+    <nav class="bg-white shadow-sm py-4">
+      <div
+        class="container mx-auto flex items-center justify-between px-4 lg:px-8"
+      >
+        <!-- Hamburger Menu (Mobile) -->
+        <button
+          id="hamburger"
+          class="block lg:hidden text-2xl text-gray-700 mr-4"
+        >
+          <i class="ph-list"></i>
+        </button>
+
+        <!-- Logo -->
+        <div class="text-2xl font-bold flex-grow lg:flex-grow-0">
+          <a href="#" class="text-black">SHOP.CO</a>
+        </div>
+
+        <!-- Links (Desktop) -->
+        <div class="hidden lg:flex space-x-8 text-sm font-medium">
+          <a href="#" class="text-gray-700 hover:text-black">Shop</a>
+          <a href="#" class="text-gray-700 hover:text-black">On Sale</a>
+          <a href="#" class="text-gray-700 hover:text-black">New Arrivals</a>
+          <a href="#" class="text-gray-700 hover:text-black">Brands</a>
+        </div>
+
+        <!-- Search bar (Desktop) -->
+        <div class="hidden lg:flex flex-grow max-w-lg items-center relative">
+          <input
+            type="text"
+            class="w-full py-2 pl-10 pr-4 rounded-full bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-300"
+            placeholder="Search for products..."
+          />
+          <i class="ph-magnifying-glass absolute left-3 text-gray-500"></i>
+        </div>
+
+        <!-- Icons (Desktop & Mobile) -->
+        <div class="flex space-x-4 items-center">
+          <a
+            id="mobile-search-btn"
+            href="#"
+            class="text-gray-700 text-xl hover:text-black lg:hidden"
+          >
+            <i class="ph-magnifying-glass"></i>
+          </a>
+          <a href="#" class="text-gray-700 text-xl hover:text-black">
+            <i class="ph-shopping-cart"></i>
+          </a>
+          <a href="#" class="text-gray-700 text-xl hover:text-black">
+            <i class="ph-user-circle"></i>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Sidebar Menu (Mobile) -->
+    <div
+      id="mobile-menu"
+      class="fixed inset-y-0 left-0 w-[250px] bg-white shadow-lg transition-transform duration-300 -translate-x-full lg:hidden"
+    >
+      <div class="flex justify-between items-center px-4 py-4 border-b">
+        <div class="text-2xl font-bold">SHOP.CO</div>
+        <button id="close-menu" class="text-2xl">
+          <i class="ph-x"></i>
+        </button>
+      </div>
+      <ul class="space-y-4 px-4 py-6">
+        <li>
+          <a href="#" class="block text-gray-700 hover:text-black">Shop</a>
+        </li>
+        <li>
+          <a href="#" class="block text-gray-700 hover:text-black">On Sale</a>
+        </li>
+        <li>
+          <a href="#" class="block text-gray-700 hover:text-black"
+            >New Arrivals</a
+          >
+        </li>
+        <li>
+          <a href="#" class="block text-gray-700 hover:text-black">Brands</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Mobile Search Input -->
+    <div
+      id="mobile-search"
+      class="fixed inset-x-0 top-10 bg-white px-4 py-3 flex items-center transition-transform duration-300 -z-10 search-hidden lg:hidden"
+    >
+      <input
+        type="text"
+        class="w-full py-2 px-4 rounded-full bg-gray-100 focus:outline-none"
+        placeholder="Search for products..."
+      />
+    </div>
+
+    <script>
+      
+    </script>
+  </body>
 </html>

@@ -16,7 +16,6 @@ const filterCards = e => {
 
 filterBtn.forEach(button => button.addEventListener("click", filterCards))
 
-// AOS.init();
 
 // Price Range Update
 const priceRange = document.querySelectorAll(".price-range");
@@ -57,11 +56,48 @@ const filterModal = (openButtonSelector, modalOpenSelector, overlaySelector) => 
   const openButton = document.querySelector(openButtonSelector);
   const modalOpen = document.querySelector(modalOpenSelector);
   const overlay = document.querySelector(overlaySelector);
+  const closeBtn = document.getElementById("close-filter");
 
   openButton.addEventListener("click", () => {
-    modalOpen.classList.toggle("translate-x-full");
+    modalOpen.classList.toggle("translate-y-full");
     overlay.classList.toggle("opacity-50");
+    overlay.classList.toggle("hidden");
   });
 
+  closeBtn.addEventListener("click", () => {
+    modalOpen.classList.toggle("translate-y-full");
+    overlay.classList.toggle("opacity-50");
+    overlay.classList.toggle("hidden");
+  });
 }
-filterModal(".btn_filter", ".filter_mobile", ".overlay")
+filterModal(".btn_filter", ".filter_mobile", ".overlay");
+
+
+// Mobile Menu
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburgerMenuButtons = document.querySelectorAll(".hamburger-menu");
+  const mobileMenuElements = document.querySelectorAll(".mobile-menu");
+  const closeButtonElements = document.querySelectorAll(".close-menu");
+
+  if (!hamburgerMenuButtons || !mobileMenuElements || !closeButtonElements) {
+    console.log("One or more of the following selectors returned null: .hamburger-menu, .mobile-menu, .close-menu");
+    return;
+  }
+  const toggleMobileMenu = () => {
+    console.log("Test");
+    mobileMenuElements.forEach((element) => element.classList.toggle("-translate-x-full"));
+  };
+
+  hamburgerMenuButtons.forEach((button) => button.addEventListener("click", toggleMobileMenu));
+  closeButtonElements.forEach((button) => button.addEventListener("click", toggleMobileMenu));
+});
+
+
+// const mobileSearchBtn = document.getElementById("mobile-search-btn");
+// const mobileSearch = document.getElementById("mobile-search");
+
+// // Toggle search input (mobile)
+// mobileSearchBtn.addEventListener("click", () => {
+//   // mobileSearch.classList.toggle("translate-y-16");
+//   // mobileSearch.classList.toggle("z-30");
+// });

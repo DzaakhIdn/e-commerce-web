@@ -4,9 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Enhanced E-commerce Page</title>
+    <!-- Phosphor Icons -->
     <script src="https://unpkg.com/phosphor-icons"></script>
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="src/output.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Manrope:wght@200..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <style>
+      * {
+        font-family: "Manrope";
+      }
       i {
         font-size: 25px;
       }
@@ -38,165 +50,127 @@
   </head>
   <body class="text-gray-800">
     <!-- Navigation / Breadcrumbs -->
-    <nav class="navbar border flex justify-between sticky mb-8">
-      <div class="bungkus flex-row lg:flex-row-reverse justify-between">
-        <div class="flex items-center justify-start border-l lg:border-l-0">
-          <input
-            type="checkbox"
-            name="hamburger"
-            id="hamburger"
-            class="peer hidden"
-          />
-          <label
-            for="hamburger"
-            class="peer-checked:hamburger block relative z-50 p-6 -mr-6 cursor-pointer lg:hidden"
-          >
-            <div
-              aria-hidden="true"
-              class="m-auto h-0.5 w-6 rounded bg-sky-900 transition duration-300"
-            ></div>
-            <div
-              aria-hidden="true"
-              class="m-auto mt-2 h-0.5 w-6 rounded bg-sky-900 transition duration-300"
-            ></div>
-          </label>
+    <div class="bg-black text-white text-sm py-2 flex justify-center relative">
+      <span
+        >Sign up and get 20% off your first order.
+        <a href="#" class="underline">Sign Up Now</a></span
+      >
+    </div>
 
-          <div
-            class="fixed inset-0 w-[calc(100%-10rem)] translate-x-[-100%] bg-white/20 ring-black/5 backdrop-blur-md border-r shadow-xl transition duration-300 lg:border-r-0 lg:w-auto lg:static lg:shadow-none lg:translate-x-0 lg:bg-white lg:backdrop-blur-none peer-checked:translate-x-0"
-          >
-            <div class="flex flex-col h-full lg:items-center lg:flex-row">
-              <ul
-                class="px-6 pt-32 text-gray-700 space-y-8 md:px-12 lg:space-y-0 lg:flex lg:space-x-12 lg:pt-0"
-              >
-                <div class="profile-mb">
-                  <i class="ph ph-user"></i>
-                  <label class="swap swap-rotate">
-                    <!-- this hidden checkbox controls the state -->
-                    <input
-                      type="checkbox"
-                      class="theme-controller hidden"
-                      value="synthwave"
-                    />
+    <!-- Navbar -->
+    <nav class="bg-white shadow-sm py-4 z-30 sticky top-0">
+      <div
+        class="container mx-auto flex items-center justify-between px-4 lg:px-8"
+      >
+        <!-- Hamburger Menu (Mobile) -->
+        <button class="hamburger-menu">
+          <i class="ph-list"></i>
+        </button>
 
-                    <!-- sun icon -->
-                    <svg
-                      class="swap-off h-9 w-9 fill-current"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"
-                      />
-                    </svg>
-                    <svg
-                      class="swap-on h-9 w-9 fill-current"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"
-                      />
-                    </svg>
-                  </label>
-                </div>
-                <li>
-                  <a
-                    href="#"
-                    class="group relative before:absolute before:inset-x-0 before:bottom-0 before:h-2 before:border-b border-slate-900"
-                  >
-                    <span class="relative text-cyan-800">Home</span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="group relative before:absolute before:inset-x-0 before:bottom-0 before:h-2 before:origin-right before:scale-x-0 before:bg-cyan-100 before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100"
-                  >
-                    <span class="relative group-hover:text-cyan-800"
-                      >Services</span
-                    >
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="group relative before:absolute before:inset-x-0 before:bottom-0 before:h-2 before:origin-right before:scale-x-0 before:bg-cyan-100 before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100"
-                  >
-                    <span class="relative group-hover:text-cyan-800"
-                      >Portfolio</span
-                    >
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="group relative before:absolute before:inset-x-0 before:bottom-0 before:h-2 before:origin-right before:scale-x-0 before:bg-cyan-100 before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100"
-                  >
-                    <span class="relative group-hover:text-cyan-800"
-                      >About us</span
-                    >
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
+        <!-- Logo -->
+        <div class="text-2xl font-bold flex-grow lg:flex-grow-0">
+          <a
+            href="#"
+            class="text-black font-extrabold"
+            style="font-family: 'Cormorant'"
+            >SHOP.CO</a
+          >
         </div>
-        <img
-          src="assets/img/logo.png"
-          alt="logo"
-          class="w-auto h-12 hidden lg:inline"
-        />
-      </div>
 
-      <img src="assets/img/logo.png" alt="logo" class="w-auto h-12 lg:hidden" />
+        <!-- Links (Desktop) -->
+        <div class="hidden lg:flex space-x-8 text-sm font-medium">
+          <a href="index.html" class="link_nav">Home</a>
+          <a href="#" class="link_nav">On Sale</a>
+          <a href="#" class="link_nav">New Arrivals</a>
+          <a href="#" class="link_nav">Brands</a>
+        </div>
 
-      <div class="search-cart">
-        <i class="ph ph-magnifying-glass"></i>
-        <i class="ph ph-shopping-bag-open"></i>
-        <i class="ph ph-user hidden lg:inline"></i>
-        <label class="swap swap-rotate hidden lg:inline-grid">
-          <!-- this hidden checkbox controls the state -->
+        <!-- Search bar (Desktop) -->
+        <div class="hidden lg:flex flex-grow max-w-lg items-center relative">
           <input
-            type="checkbox"
-            class="theme-controller hidden"
-            value="synthwave"
+            type="text"
+            class="w-full py-2 pl-10 pr-4 rounded-full bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-300"
+            placeholder="Search for products..."
           />
+          <i class="ph-magnifying-glass absolute left-3 text-gray-500"></i>
+        </div>
 
-          <!-- sun icon -->
-          <svg
-            class="swap-off h-9 w-9 fill-current"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
+        <!-- Icons (Desktop & Mobile) -->
+        <div class="flex space-x-4 items-center">
+          <a
+            id="mobile-search-btn"
+            href="#"
+            class="text-gray-700 text-xl hover:text-black lg:hidden"
           >
-            <path
-              d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"
-            />
-          </svg>
-
-          <!-- moon icon -->
-          <svg
-            class="swap-on h-9 w-9 fill-current"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"
-            />
-          </svg>
-        </label>
+            <i class="ph-magnifying-glass"></i>
+          </a>
+          <a href="#" class="text-gray-700 text-xl hover:text-black">
+            <i class="ph-shopping-cart"></i>
+          </a>
+          <a href="#" class="text-gray-700 text-xl hover:text-black">
+            <i class="ph-user-circle"></i>
+          </a>
+        </div>
       </div>
+
+      <!-- Mobile Search Input -->
+      <!-- <div
+        id="mobile-search"
+        class="absolute inset-x-0 w-full top-10 bg-white px-4 py-3 flex items-center transition-transform duration-300 -z-30 lg:hidden mb-5 translate-y-0"
+      >
+        <input
+          type="text"
+          class="w-full py-2 px-4 rounded-full bg-gray-100 focus:outline-none"
+          placeholder="Search for products..."
+        />
+      </div> -->
     </nav>
+
+    <!-- Sidebar Menu (Mobile) -->
+    <div class="mobile-menu -translate-x-full">
+      <div class="flex justify-between items-center px-4 py-4 border-b">
+        <div class="text-2xl font-bold" style="font-family: 'Raleway'">
+          SHOP.CO
+        </div>
+        <button class="close-menu text-2xl">
+          <i class="ph-x"></i>
+        </button>
+      </div>
+      <ul class="space-y-4 px-4 py-6">
+        <li>
+          <a href="index.html" class="block text-gray-700 hover:text-black"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a href="katalog.html" class="block text-gray-700 hover:text-black"
+            >On Sale</a
+          >
+        </li>
+        <li>
+          <a href="#" class="block text-gray-700 hover:text-black"
+            >New Arrivals</a
+          >
+        </li>
+        <li>
+          <a href="#" class="block text-gray-700 hover:text-black">Brands</a>
+        </li>
+      </ul>
+    </div>
 
     <!-- Main Content -->
     <div
-      class="relative overflow-hidden container mx-auto gap-5 flex flex-col lg:flex-row"
+      class="relative overflow-hidden mt-10 container mx-auto gap-5 flex flex-col lg:flex-row"
     >
       <!-- Sidebar Filters -->
       <!-- Mobile -->
-      <aside class="filter_mobile translate-x-full">
+      <aside class="filter_mobile translate-y-full">
         <div class="flex justify-between w-full items-center">
           <h3 class="font-semibold text-xl mb-4 flex items-center">Filters</h3>
-          <i class="ph ph-sliders-horizontal"></i>
+          <div class="icon_filter">
+            <i class="ph ph-sliders-horizontal"></i>
+            <i id="close-filter" class="ph ph-x"></i>
+          </div>
         </div>
         <hr />
         <!-- Categories -->
@@ -319,12 +293,7 @@
         </button>
       </aside>
 
-      <div class="overlay opacity-0"></div>
-      <!-- Filter Button -->
-      <button class="btn_filter">
-        <p class="text-white">Filter</p>
-        <i class="ph ph-funnel-simple text-white"></i>
-      </button>
+      <div class="overlay opacity-0 hidden"></div>
 
       <!-- Lg -->
       <aside
@@ -459,7 +428,7 @@
       <div class="w-full lg:w-3/4 p-6 border border-gray-200 rounded-md">
         <div class="flex justify-between items-center mb-6">
           <h2 class="text-2xl font-semibold">Casual</h2>
-          <div class="relative inline-block text-left dropdown">
+          <div class="relative hidden lg:inline-block text-left dropdown">
             <button
               class="flex items-center text-gray-700 hover:text-gray-900 transition"
             >
@@ -485,6 +454,9 @@
               </button>
             </div>
           </div>
+          <button class="btn_filter">
+            <i class="ph ph-funnel-simple text-gray-500 text-sm"></i>
+          </button>
         </div>
 
         <!-- Product Grid -->
