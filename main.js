@@ -75,21 +75,19 @@ filterModal(".btn_filter", ".filter_mobile", ".overlay");
 
 // Mobile Menu
 document.addEventListener("DOMContentLoaded", () => {
-  const hamburgerMenuButtons = document.querySelectorAll(".hamburger-menu");
-  const mobileMenuElements = document.querySelectorAll(".mobile-menu");
-  const closeButtonElements = document.querySelectorAll(".close-menu");
+  const hamburgerMenuButtons = document.getElementById("hamburger-menu");
+  const mobileMenuElements = document.getElementById("mobile-menu");
+  const closeButtonElements = document.getElementById("close-menu");
 
   if (!hamburgerMenuButtons || !mobileMenuElements || !closeButtonElements) {
     console.log("One or more of the following selectors returned null: .hamburger-menu, .mobile-menu, .close-menu");
     return;
   }
-  const toggleMobileMenu = () => {
-    console.log("Test");
-    mobileMenuElements.forEach((element) => element.classList.toggle("-translate-x-full"));
+  const toggleMenu = () => {
+    mobileMenuElements.classList.toggle("-translate-x-full");
   };
-
-  hamburgerMenuButtons.forEach((button) => button.addEventListener("click", toggleMobileMenu));
-  closeButtonElements.forEach((button) => button.addEventListener("click", toggleMobileMenu));
+  hamburgerMenuButtons.addEventListener("click", toggleMenu);
+  closeButtonElements.addEventListener("click", toggleMenu);
 });
 
 

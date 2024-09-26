@@ -141,4 +141,53 @@
   .overlay {
     @apply w-full h-full bg-black fixed inset-0 z-20 transition-all duration-300;
   }
+
+  /* 
+  Products Page }
+  header
+   */
+  .header_products {
+    @apply w-full h-auto p-5;
+  }
+  .products_image {
+    @apply flex flex-col gap-3 items-center justify-center;
+  }
+  .img_satu {
+    @apply w-full h-[290px] rounded-lg;
+  }
+  .img_satu img {
+    @apply object-cover object-center rounded-lg w-full h-full;
+  }
+  .other_preview {
+    @apply w-full h-auto flex justify-evenly items-center;
+  }
+  .other_img {
+    @apply w-[111px] h-[106px] rounded-lg;
+  }
+  .other_img img {
+    @apply object-cover w-full h-full rounded-lg object-center;
+  }
+  .rating:not(:checked) > input {
+    @apply absolute appearance-none border-none;
+  }
+  .rating:not(:checked) > label {
+    @apply float-right cursor-pointer text-gray-200 fill-gray-200 text-lg;
+  }
+  .rating:not(:checked) > label > i {
+    @apply text-gray-200 transition-all duration-300 ease-in;
+  }
+  .rating > input:checked + label:hover,
+  .rating > input:checked + label:hover ~ label,
+  .rating > input:checked + label:hover,
+  .rating > input:checked + label:hover ~ label,
+  .rating > input:checked + label:hover ~ label {
+    @apply text-yellow-300 fill-yellow-300;
+  }
+  .rating:not(:checked) > label:hover,
+  .rating:not(:checked) > label:hover ~ label {
+    @apply fill-yellow-300 text-yellow-300;
+  }
+  .rating > input:checked ~ label > i {
+    @apply text-yellow-300 fill-yellow-300;
+  }
 }
