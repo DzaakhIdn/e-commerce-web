@@ -58,19 +58,28 @@ const filterModal = (openButtonSelector, modalOpenSelector, overlaySelector) => 
   const overlay = document.querySelector(overlaySelector);
   const closeBtn = document.getElementById("close-filter");
 
-  openButton.addEventListener("click", () => {
-    modalOpen.classList.toggle("translate-y-full");
-    overlay.classList.toggle("opacity-50");
-    overlay.classList.toggle("hidden");
-  });
+  if (openButton && modalOpen && overlay) {
+    openButton.addEventListener("click", () => {
+      modalOpen.classList.toggle("translate-y-full");
+      overlay.classList.toggle("opacity-50");
+      overlay.classList.toggle("hidden");
+    });
+  } else {
+    console.error('Open button, modal, or overlay not found.');
+  }
 
-  closeBtn.addEventListener("click", () => {
-    modalOpen.classList.toggle("translate-y-full");
-    overlay.classList.toggle("opacity-50");
-    overlay.classList.toggle("hidden");
-  });
-}
+  if (closeBtn) {
+    closeBtn.addEventListener("click", () => {
+      modalOpen.classList.toggle("translate-y-full");
+      overlay.classList.toggle("opacity-50");
+      overlay.classList.toggle("hidden");
+    });
+  } else {
+    console.error('Close button not found.');
+  }
+};
 filterModal(".btn_filter", ".filter_mobile", ".overlay");
+
 
 
 // Mobile Menu
@@ -86,16 +95,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const toggleMenu = () => {
     mobileMenuElements.classList.toggle("-translate-x-full");
   };
+
   hamburgerMenuButtons.addEventListener("click", toggleMenu);
   closeButtonElements.addEventListener("click", toggleMenu);
 });
 
+const hamburgerBtn = document.getElementById("hamburger-menu-index");
+const mobileMenu = document.getElementById("mobile-menu-index");
+const closeButton = document.getElementById("close-menu-index");
 
-// const mobileSearchBtn = document.getElementById("mobile-search-btn");
-// const mobileSearch = document.getElementById("mobile-search");
+const menuBtn = () => {
+  mobileMenu.classList.toggle("-translate-x-full");
+}
 
-// // Toggle search input (mobile)
-// mobileSearchBtn.addEventListener("click", () => {
-//   // mobileSearch.classList.toggle("translate-y-16");
-//   // mobileSearch.classList.toggle("z-30");
-// });
+hamburgerBtn.addEventListener("click", menuBtn);
+closeButton.addEventListener("click", menuBtn);

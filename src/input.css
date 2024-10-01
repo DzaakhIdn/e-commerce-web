@@ -149,31 +149,52 @@
   .header_products {
     @apply w-full h-auto p-5;
   }
+  .bungkus_content_header {
+    @apply flex flex-col lg:flex-row lg:gap-2 lg:justify-between;
+  }
   .products_image {
-    @apply flex flex-col gap-3 items-center justify-center;
+    @apply flex flex-col md:grid md:grid-cols-4 gap-3 items-center justify-center;
+  }
+  .products_details {
+    @apply lg:flex lg:flex-col lg:w-2/4;
   }
   .img_satu {
-    @apply w-full h-[290px] rounded-lg;
+    @apply w-full md:col-span-3 md:order-last h-[290px] md:h-[350px] xl:h-[530px] rounded-lg;
   }
   .img_satu img {
     @apply object-cover object-center rounded-lg w-full h-full;
   }
   .other_preview {
-    @apply w-full h-auto flex justify-evenly items-center;
+    @apply w-full h-auto flex md:flex-col justify-evenly gap-2 lg:gap-4 md:justify-between items-center;
   }
   .other_img {
-    @apply w-[111px] h-[106px] rounded-lg;
+    @apply w-[111px] xl:w-[152px] xl:h-[167px] h-[106px] rounded-lg;
   }
   .other_img img {
     @apply object-cover w-full h-full rounded-lg object-center;
+  }
+  .title_products {
+    @apply text-[30px] font-extrabold text-gray-900;
+  }
+  .price {
+    @apply flex items-center gap-3;
+  }
+  .price .normal-price {
+    @apply text-gray-900 font-extrabold text-[25px];
+  }
+  .price .discount-price {
+    @apply text-gray-300 font-extrabold text-[25px] line-through;
+  }
+  .price .discount {
+    @apply bg-red-200 text-red-400 text-[14px] py-2 px-3 rounded-full;
   }
   .rating:not(:checked) > input {
     @apply absolute appearance-none border-none;
   }
   .rating:not(:checked) > label {
-    @apply float-right cursor-pointer text-gray-200 fill-gray-200 text-lg;
+    @apply float-right cursor-pointer text-gray-200 fill-gray-200 w-5 h-5;
   }
-  .rating:not(:checked) > label > i {
+  .rating:not(:checked) > label > svg {
     @apply text-gray-200 transition-all duration-300 ease-in;
   }
   .rating > input:checked + label:hover,
@@ -187,7 +208,7 @@
   .rating:not(:checked) > label:hover ~ label {
     @apply fill-yellow-300 text-yellow-300;
   }
-  .rating > input:checked ~ label > i {
+  .rating > input:checked ~ label > svg {
     @apply text-yellow-300 fill-yellow-300;
   }
 }
