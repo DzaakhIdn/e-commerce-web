@@ -110,3 +110,22 @@ const menuBtn = () => {
 
 hamburgerBtn.addEventListener("click", menuBtn);
 closeButton.addEventListener("click", menuBtn);
+
+const purchaseButtons = document.querySelectorAll(".card_container");
+
+purchaseButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    console.log("Button clicked");
+    console.log("Redirecting to products.html");
+    window.location.href = "./../assets/pages/products.html";
+  });
+});
+
+
+const productCardContainers = document.querySelectorAll(".products_catalog .card_container");
+
+productCardContainers.forEach(container => {
+  container.addEventListener("click", () => {
+    window.location.href = "products.html";
+  });
+});

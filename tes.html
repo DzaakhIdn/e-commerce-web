@@ -3,78 +3,41 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Product Section</title>
-    <script src="https://unpkg.com/phosphor-icons"></script>
+    <title>Review Card</title>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="bg-gray-100 p-6">
-    <div class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md">
-      <!-- Color Selection -->
-      <div>
-        <h2 class="text-lg font-semibold mb-2">Select Colors</h2>
-        <div class="flex space-x-4 mb-4">
-          <div
-            class="w-8 h-8 rounded-full border border-gray-300 bg-[#5b4a33] flex items-center justify-center"
-          >
-            <svg
-              class="w-4 h-4 text-white"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M5 13l4 4L19 7"
-              />
-            </svg>
-          </div>
-          <div class="w-8 h-8 rounded-full bg-[#36544e]"></div>
-          <div class="w-8 h-8 rounded-full bg-[#2b2d48]"></div>
+    <div class="mx-auto bg-white p-6 rounded-lg shadow-md">
+      <!-- Star Rating -->
+      <div class="flex items-center mb-2">
+        <div class="flex space-x-1 text-yellow-500">
+          <i class="ph-star-fill"></i>
+          <i class="ph-star-fill"></i>
+          <i class="ph-star-fill"></i>
+          <i class="ph-star-fill"></i>
+          <i class="ph-star-half"></i>
         </div>
+        <button class="ml-auto text-gray-400">
+          <i class="ph-dots-three-outline-vertical text-xl"></i>
+        </button>
       </div>
 
-      <!-- Size Selection -->
-      <div>
-        <h2 class="text-lg font-semibold mb-2">Choose Size</h2>
-        <div class="flex space-x-4 mb-4">
-          <button class="px-4 py-2 rounded-full bg-gray-100 text-gray-700">
-            Small
-          </button>
-          <button class="px-4 py-2 rounded-full bg-gray-100 text-gray-700">
-            Medium
-          </button>
-          <button class="px-4 py-2 rounded-full bg-black text-white">
-            Large
-          </button>
-          <button class="px-4 py-2 rounded-full bg-gray-100 text-gray-700">
-            X-Large
-          </button>
-        </div>
+      <!-- Reviewer Info -->
+      <div class="flex items-center mb-2">
+        <span class="font-semibold">Samantha D.</span>
+        <i class="ph-check-circle-fill text-green-500 ml-1"></i>
       </div>
 
-      <!-- Add to Cart & Quantity Selection -->
-      <div class="flex items-center justify-between">
-        <!-- Quantity Selection -->
-        <div class="flex items-center space-x-2">
-          <button class="bg-gray-200 rounded-full p-2">
-            <i class="ph-minus text-xl"></i>
-          </button>
-          <span class="mx-2 text-lg font-semibold">1</span>
-          <button class="bg-gray-200 rounded-full p-2">
-            <i class="ph-plus text-xl"></i>
-          </button>
-        </div>
+      <!-- Review Text -->
+      <p class="text-gray-600 mb-4">
+        "I absolutely love this t-shirt! The design is unique and the fabric
+        feels so comfortable. As a fellow designer, I appreciate the attention
+        to detail. It's become my favorite go-to shirt."
+      </p>
 
-        <!-- Add to Cart Button -->
-        <div class="flex-grow ml-4">
-          <button class="w-full py-3 bg-black text-white rounded-full">
-            Add to Cart
-          </button>
-        </div>
-      </div>
+      <!-- Review Date -->
+      <p class="text-gray-400 text-sm">Posted on August 14, 2023</p>
     </div>
   </body>
 </html>

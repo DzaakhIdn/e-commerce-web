@@ -188,7 +188,7 @@
   .price .discount {
     @apply bg-red-200 text-red-400 text-[14px] py-2 px-3 rounded-full;
   }
-  .rating:not(:checked) > input {
+  /* .rating:not(:checked) > input {
     @apply absolute appearance-none border-none;
   }
   .rating:not(:checked) > label {
@@ -210,5 +210,5 @@
   }
   .rating > input:checked ~ label > svg {
     @apply text-yellow-300 fill-yellow-300;
-  }
+  } */
 }
