@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout</title>
+    <link rel="stylesheet" href="../../src/output.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Manrope:wght@200..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom Icon's -->
+    <script src="https://unpkg.com/phosphor-icons"></script>
+  </head>
+  <style>
+    * {
+      font-family: "Manrope";
+    }
+    i:hover {
+      cursor: pointer;
+    }
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+    .scrollbar-hide {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+  </style>
+  <body>
+    <!-- Navigation / Breadcrumbs -->
+    <div class="bg-black text-white text-sm py-2 flex justify-center relative">
+      <span
+        >Sign up and get 20% off your first order.
+        <a href="#" class="underline">Sign Up Now</a></span
+      >
+    </div>
+    <!-- Promo Notiv -->
+    <nav class="bg-white shadow-sm py-4 z-30 sticky top-0">
+      <div
+        class="container mx-auto flex items-center justify-between px-4 lg:px-8"
+      >
+        <!-- Hamburger Menu (Mobile) -->
+        <button id="hamburger-menu-index" class="hamburger-menu">
+          <i class="ph-list"></i>
+        </button>
+
+        <!-- Logo -->
+        <div class="text-2xl font-bold flex-grow lg:flex-grow-0">
+          <a
+            href="#"
+            class="text-black font-extrabold"
+            style="font-family: 'Cormorant'"
+            >SHOP.CO</a
+          >
+        </div>
+
+        <!-- Links (Desktop) -->
+        <div class="hidden lg:flex space-x-8 text-sm font-medium">
+          <a href="index.html" class="link_nav">Home</a>
+          <a href="./assets/pages/katalog.html" class="link_nav">On Sale</a>
+          <a href="#" class="link_nav">New Arrivals</a>
+          <a href="#" class="link_nav">Brands</a>
+        </div>
+
+        <!-- Search bar (Desktop) -->
+        <div class="hidden lg:flex flex-grow max-w-lg items-center relative">
+          <input
+            type="text"
+            class="w-full py-2 pl-10 pr-4 rounded-full bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-300"
+            placeholder="Search for products..."
+          />
+          <i class="ph-magnifying-glass absolute left-3 text-gray-500"></i>
+        </div>
+
+        <!-- Icons (Desktop & Mobile) -->
+        <div class="flex space-x-4 items-center">
+          <a
+            id="mobile-search-btn"
+            href="#"
+            class="text-gray-700 text-xl hover:text-black lg:hidden"
+          >
+            <i class="ph-magnifying-glass"></i>
+          </a>
+          <a href="#" class="text-gray-700 text-xl hover:text-black">
+            <i class="ph-shopping-cart"></i>
+          </a>
+          <a href="#" class="text-gray-700 text-xl hover:text-black">
+            <i class="ph-user-circle"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Mobile Search Input -->
+      <!-- <div
+          id="mobile-search"
+          class="absolute inset-x-0 w-full top-10 bg-white px-4 py-3 flex items-center transition-transform duration-300 -z-30 lg:hidden mb-5 translate-y-0"
+        >
+          <input
+            type="text"
+            class="w-full py-2 px-4 rounded-full bg-gray-100 focus:outline-none"
+            placeholder="Search for products..."
+          />
+        </div> -->
+    </nav>
+    <!-- Sidebar Menu (Mobile) -->
+    <div id="mobile-menu-index" class="mobile-menu -translate-x-full">
+      <div class="flex justify-between items-center px-4 py-4 border-b">
+        <div class="text-2xl font-bold" style="font-family: 'Raleway'">
+          SHOP.CO
+        </div>
+        <button id="close-menu-index" class="close-menu text-2xl">
+          <i class="ph-x"></i>
+        </button>
+      </div>
+      <ul class="space-y-4 px-4 py-6">
+        <li>
+          <a href="../../index.html" class="block text-gray-700 hover:text-black">Home</a>
+        </li>
+        <li>
+          <a href="./katalog.html" class="block text-gray-700 hover:text-black">On Sale</a>
+        </li>
+        <li>
+          <a href="#" class="block text-gray-700 hover:text-black"
+            >New Arrivals</a
+          >
+        </li>
+        <li>
+          <a href="#" class="block text-gray-700 hover:text-black">Brands</a>
+        </li>
+      </ul>
+    </div>
+
+    <main
+      class="w-full mx-auto p-5 flex flex-col md:flex-row md:justify-between md:items-center"
+    >
+      <div class="mx-auto">
+        <!-- Product Item 1 -->
+        <div
+          class="flex items-center justify-between bg-white p-4 rounded-lg shadow-md mb-4"
+        >
+          <img
+            src="https://via.placeholder.com/70"
+            alt="Product Image"
+            class="w-16 h-16 rounded-md object-cover"
+          />
+          <div class="flex-1 ml-4">
+            <h3 class="font-semibold text-lg">Gradient Graphic T-shirt</h3>
+            <p class="text-sm text-gray-500">Size: Large</p>
+            <p class="text-sm text-gray-500">Color: White</p>
+            <p class="text-xl font-semibold mt-2">$145</p>
+          </div>
+          <div class="flex flex-col items-end">
+            <div class="flex items-center bg-gray-200 rounded-full">
+              <button class="decrement text-lg px-2 py-1">-</button>
+              <input
+                type="text"
+                value="1"
+                class="qty text-center w-12 bg-gray-200 border-none"
+              />
+              <button class="increment text-lg px-2 py-1">+</button>
+            </div>
+            <button class="mt-2 text-red-500 hover:text-red-700">
+              <i class="ph-trash text-xl"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Product Item 2 -->
+        <div
+          class="flex items-center justify-between bg-white p-4 rounded-lg shadow-md mb-4"
+        >
+          <img
+            src="https://via.placeholder.com/70"
+            alt="Product Image"
+            class="w-16 h-16 rounded-md object-cover"
+          />
+          <div class="flex-1 ml-4">
+            <h3 class="font-semibold text-lg">Checkered Shirt</h3>
+            <p class="text-sm text-gray-500">Size: Medium</p>
+            <p class="text-sm text-gray-500">Color: Red</p>
+            <p class="text-xl font-semibold mt-2">$180</p>
+          </div>
+          <div class="flex flex-col items-end">
+            <div class="flex items-center bg-gray-200 rounded-full">
+              <button class="decrement text-lg px-2 py-1">−</button>
+              <input
+                type="text"
+                value="1"
+                class="qty text-center w-12 bg-gray-200 border-none"
+              />
+              <button class="increment text-lg px-2 py-1">+</button>
+            </div>
+            <button class="mt-2 text-red-500 hover:text-red-700">
+              <i class="ph-trash text-xl"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Product Item 3 -->
+        <div
+          class="flex items-center justify-between bg-white p-4 rounded-lg shadow-md mb-4"
+        >
+          <img
+            src="https://via.placeholder.com/70"
+            alt="Product Image"
+            class="w-16 h-16 rounded-md object-cover"
+          />
+          <div class="flex-1 ml-4">
+            <h3 class="font-semibold text-lg">Skinny Fit Jeans</h3>
+            <p class="text-sm text-gray-500">Size: Large</p>
+            <p class="text-sm text-gray-500">Color: Blue</p>
+            <p class="text-xl font-semibold mt-2">$240</p>
+          </div>
+          <div class="flex flex-col items-end">
+            <div class="flex items-center bg-gray-200 rounded-full">
+              <button class="decrement text-lg px-2 py-1">−</button>
+              <input
+                type="text"
+                value="1"
+                class="qty text-center w-12 bg-gray-200 border-none"
+              />
+              <button class="increment text-lg px-2 py-1">+</button>
+            </div>
+            <button class="mt-2 text-red-500 hover:text-red-700">
+              <i class="ph-trash text-xl"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Checkout Section -->
+      <div
+        class="bg-white flex flex-col w-full md:w-[380px] lg:w-[505px] lg:gap-4 lg:h-[458px] mx-auto p-4 rounded-lg shadow-md"
+      >
+        <h4 class="font-semibold text-lg mb-4">Ringkasan Pesanan</h4>
+        <div class="flex justify-between mb-2">
+          <p class="text-sm text-gray-500">Subtotal</p>
+          <p class="text-sm text-gray-500">
+            Rp <span id="subtotal">$ 565</span>
+          </p>
+        </div>
+        <div class="flex justify-between mb-2">
+          <p class="text-sm text-gray-500">Diskon</p>
+          <p class="text-sm text-gray-500">Rp <span id="discount">0</span></p>
+        </div>
+        <div class="flex justify-between mb-4">
+          <p class="text-sm text-gray-500">Total</p>
+          <p class="text-sm text-gray-500">Rp <span id="total">$ 565</span></p>
+        </div>
+        <div class="kode_promo flex items-center gap-3">
+          <input
+            type="text"
+            id="promoCode"
+            placeholder="Masukkan kode promo"
+            class="w-full px-4 py-3 border border-gray-300 rounded-full text-sm"
+          />
+          <button
+            id="applyPromo"
+            class="w-full bg-gray-800 text-white px-5 py-3 text-sm rounded-full flex-1"
+          >
+            apply
+          </button>
+        </div>
+        <button
+          id="applyPromo"
+          class="w-full bg-gray-800 text-white px-5 py-3 text-sm rounded-full mt-4"
+        >
+          checkout
+        </button>
+      </div>
+    </main>
+
+    <footer class="bg-gray-900 py-12">
+      <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+        <!-- Left Column - About -->
+        <div class="space-y-4">
+          <h2 class="text-lg font-semibold text-gray-50">About Us</h2>
+          <p class="text-gray-400">
+            Lorem ipsum dolor sit amet consectetur. Purus in etiam risus ut sem
+            eu urna. Massa feugiat consequat nec libero.
+          </p>
+          <p class="text-gray-400">Lorem ipsum dolor sit</p>
+        </div>
+
+        <!-- Middle Column - Products Section -->
+        <div class="space-y-4">
+          <h2 class="text-lg font-semibold text-gray-50">Our Products</h2>
+          <ul class="space-y-2">
+            <li>
+              <a href="#" class="hover:text-gray-500 text-gray-200"
+                >Baju Cowok</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-gray-500 text-gray-200"
+                >Baju Cowo Kece</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-gray-500 text-gray-200"
+                >Gaun Nge date</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-gray-500 text-gray-200"
+                >Baju Anak Imoet</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-gray-500 text-gray-200"
+                >Baju Omma🤗</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Middle Column - Quick Links -->
+        <div class="space-y-4">
+          <h2 class="text-lg font-semibold text-gray-50">Quick Links</h2>
+          <ul class="space-y-2">
+            <li>
+              <a href="#" class="hover:text-gray-500 text-gray-200">Service</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-gray-500 text-gray-200">Features</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-gray-500 text-gray-200">Our Team</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-gray-500 text-gray-200"
+                >Portfolio</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-gray-500 text-gray-200">Blog</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-gray-500 text-gray-200"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right Column - Contact Info and Social Icons -->
+        <div class="space-y-6">
+          <div class="flex flex-col space-y-2">
+            <input
+              class="p-3 w-full rounded-md text-gray-900 focus:ring-2 focus:ring-white"
+              type="text"
+              placeholder="Enter Your Email or Phone no."
+            />
+            <button
+              class="p-3 bg-gray-800 text-gray-100 rounded-md hover:bg-gray-700 transition"
+            >
+              Send
+            </button>
+          </div>
+          <div class="flex space-x-4 justify-center md:justify-start">
+            <a href="#" class="text-white hover:text-gray-400 transition">
+              <i class="ph-facebook-logo ph-light text-3xl"></i>
+            </a>
+            <a href="#" class="text-white hover:text-gray-400 transition">
+              <i class="ph-instagram-logo ph-light text-3xl"></i>
+            </a>
+            <a href="#" class="text-white hover:text-gray-400 transition">
+              <i class="ph-whatsapp-logo ph-light text-3xl"></i>
+            </a>
+            <a href="#" class="text-white hover:text-gray-400 transition">
+              <i class="ph-linkedin-logo ph-light text-3xl"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="mt-10 border-t border-gray-800 pt-6 mt-5">
+        <div
+          class="container mx-auto px-4 text-center md:flex md:justify-between text-gray-400"
+        >
+          <p>8819 Ohio St. South Gate, CA 90280</p>
+          <p>CrossLine@hello.com | +91 386-688-3295</p>
+        </div>
+      </div>
+    </footer>
+    <script src="../../main.js"></script>
+  </body>
+</html>

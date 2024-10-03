@@ -3,41 +3,146 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Review Card</title>
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <title>Ringkasan Pesanan Interaktif</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@2.27.0/dist/full.css"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/@phosphor-icons/web@1.4.1/src/index.js"></script>
+    <style>
+      /* Menghilangkan scrollbar default */
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+      .scrollbar-hide {
+        -ms-overflow-style: none; /* IE dan Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+    </style>
   </head>
   <body class="bg-gray-100 p-6">
-    <div class="mx-auto bg-white p-6 rounded-lg shadow-md">
-      <!-- Star Rating -->
-      <div class="flex items-center mb-2">
-        <div class="flex space-x-1 text-yellow-500">
-          <i class="ph-star-fill"></i>
-          <i class="ph-star-fill"></i>
-          <i class="ph-star-fill"></i>
-          <i class="ph-star-fill"></i>
-          <i class="ph-star-half"></i>
+    <div class="max-w-md mx-auto">
+      <!-- Item Produk -->
+      <div
+        class="flex items-center justify-between bg-white p-4 rounded-lg shadow-md mb-4"
+      >
+        <img
+          src="https://via.placeholder.com/70"
+          alt="Product Image"
+          class="w-16 h-16 rounded-md object-cover"
+        />
+        <div class="flex-1 ml-4">
+          <h3 class="font-semibold text-lg">Gradient Graphic T-shirt</h3>
+          <p class="text-sm text-gray-500">Size: Large</p>
+          <p class="text-sm text-gray-500">Color: White</p>
+          <p class="text-xl font-semibold mt-2">$145</p>
         </div>
-        <button class="ml-auto text-gray-400">
-          <i class="ph-dots-three-outline-vertical text-xl"></i>
+        <div class="flex flex-col items-end">
+          <div class="flex items-center bg-gray-200 rounded-full">
+            <button class="decrement text-lg px-2 py-1">-</button>
+            <input
+              type="text"
+              value="1"
+              class="qty text-center w-12 bg-gray-200 border-none"
+            />
+            <button class="increment text-lg px-2 py-1">+</button>
+          </div>
+          <button class="mt-2 text-red-500 hover:text-red-700">
+            <i class="ph-trash text-xl"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Ringkasan Pesanan -->
+      <div class="bg-white p-4 rounded-lg shadow-md">
+        <h4 class="font-semibold text-lg mb-4">Ringkasan Pesanan</h4>
+        <div class="flex justify-between mb-2">
+          <p class="text-sm text-gray-500">Subtotal</p>
+          <p class="text-sm text-gray-500">
+            Rp <span id="subtotal">145.000</span>
+          </p>
+        </div>
+        <div class="flex justify-between mb-2">
+          <p class="text-sm text-gray-500">Diskon</p>
+          <p class="text-sm text-gray-500">Rp <span id="discount">0</span></p>
+        </div>
+        <div class="flex justify-between mb-4">
+          <p class="text-sm text-gray-500">Total</p>
+          <p class="text-sm text-gray-500">
+            Rp <span id="total">145.000</span>
+          </p>
+        </div>
+        <input
+          type="text"
+          id="promoCode"
+          placeholder="Masukkan kode promo"
+          class="w-full px-4 py-2 border border-gray-300 rounded-md mb-2"
+        />
+        <button
+          id="applyPromo"
+          class="w-full bg-blue-500 text-white px-4 py-2 rounded-md"
+        >
+          Terapkan Kode Promo
         </button>
       </div>
-
-      <!-- Reviewer Info -->
-      <div class="flex items-center mb-2">
-        <span class="font-semibold">Samantha D.</span>
-        <i class="ph-check-circle-fill text-green-500 ml-1"></i>
-      </div>
-
-      <!-- Review Text -->
-      <p class="text-gray-600 mb-4">
-        "I absolutely love this t-shirt! The design is unique and the fabric
-        feels so comfortable. As a fellow designer, I appreciate the attention
-        to detail. It's become my favorite go-to shirt."
-      </p>
-
-      <!-- Review Date -->
-      <p class="text-gray-400 text-sm">Posted on August 14, 2023</p>
     </div>
+
+    <script>
+      // JavaScript untuk mengatur kuantitas dan menghitung total harga
+      document.addEventListener("DOMContentLoaded", () => {
+        const incrementButtons = document.querySelectorAll(".increment");
+        const decrementButtons = document.querySelectorAll(".decrement");
+        const qtyInputs = document.querySelectorAll(".qty");
+        const subtotalElement = document.getElementById("subtotal");
+        const discountElement = document.getElementById("discount");
+        const totalElement = document.getElementById("total");
+        const promoCodeInput = document.getElementById("promoCode");
+        const applyPromoButton = document.getElementById("applyPromo");
+
+        let subtotal = 145000; // Harga awal produk
+        let discount = 0;
+        let total = subtotal;
+
+        function updateTotal() {
+          total = subtotal - discount;
+          subtotalElement.textContent = subtotal.toLocaleString("id-ID");
+          discountElement.textContent = discount.toLocaleString("id-ID");
+          totalElement.textContent = total.toLocaleString("id-ID");
+        }
+
+        incrementButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            const qtyInput = button.previousElementSibling;
+            let qty = parseInt(qtyInput.value);
+            qtyInput.value = qty + 1;
+            subtotal += 145000; // Tambah harga produk per item
+            updateTotal();
+          });
+        });
+
+        decrementButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            const qtyInput = button.nextElementSibling;
+            let qty = parseInt(qtyInput.value);
+            if (qty > 1) {
+              qtyInput.value = qty - 1;
+              subtotal -= 145000; // Kurangi harga produk per item
+              updateTotal();
+            }
+          });
+        });
+
+        applyPromoButton.addEventListener("click", () => {
+          const promoCode = promoCodeInput.value.trim();
+          if (promoCode === "DISKON10") {
+            discount = subtotal * 0.1; // Diskon 10%
+            updateTotal();
+          } else {
+            alert("Kode promo tidak valid");
+          }
+        });
+      });
+    </script>
   </body>
 </html>

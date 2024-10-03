@@ -129,3 +129,58 @@ productCardContainers.forEach(container => {
     window.location.href = "products.html";
   });
 });
+
+// JavaScript untuk mengatur kuantitas dan menghitung total harga
+document.addEventListener('DOMContentLoaded', () => {
+  const incrementButtons = document.querySelectorAll('.increment');
+  const decrementButtons = document.querySelectorAll('.decrement');
+  const qtyInputs = document.querySelectorAll('.qty');
+  const subtotalElement = document.getElementById('subtotal');
+  const discountElement = document.getElementById('discount');
+  const totalElement = document.getElementById('total');
+  const promoCodeInput = document.getElementById('promoCode');
+  const applyPromoButton = document.getElementById('applyPromo');
+
+  let subtotal = 565; // Harga awal produk
+  let discount = 0;
+  let total = subtotal;
+
+  function updateTotal() {
+      total = subtotal - discount;
+      subtotalElement.textContent = subtotal.toLocaleString('id-ID');
+      discountElement.textContent = discount.toLocaleString('id-ID');
+      totalElement.textContent = total.toLocaleString('id-ID');
+  }
+
+  incrementButtons.forEach(button => {
+      button.addEventListener('click', () => {
+          const qtyInput = button.previousElementSibling;
+          let qty = parseInt(qtyInput.value);
+          qtyInput.value = qty + 1;
+          subtotal += 565; // Tambah harga produk per item
+          updateTotal();
+      });
+  });
+
+  decrementButtons.forEach(button => {
+      button.addEventListener('click', () => {
+          const qtyInput = button.nextElementSibling;
+          let qty = parseInt(qtyInput.value);
+          if (qty > 1) {
+              qtyInput.value = qty - 1;
+              subtotal -= 565; // Kurangi harga produk per item
+              updateTotal();
+          }
+      });
+  });
+
+  applyPromoButton.addEventListener('click', () => {
+      const promoCode = promoCodeInput.value.trim();
+      if (promoCode === 'DISKON10') {
+          discount = subtotal * 0.10; // Diskon 10%
+          updateTotal();
+      } else {
+          alert('Kode promo tidak valid');
+      }
+  });
+});
